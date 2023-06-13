@@ -7,29 +7,51 @@
 }
 
 .content-box {
+    display: flex;
     margin: 0 2vw auto;
+}
+
+.main-page-content {
+    width: 73vw;
+    overflow: auto;
+    height: 91vh;
+    border: 2px solid red;
+    padding: 10px;
+    font-size: 2vw;
+    margin-left: 10px;
 }
 
 .questions-menu {
     width: 25vw;
+    height: 86.7vh;
     overflow: auto;
-    height: 83vh;
+}
+
+.questions-container {
     border: 2px solid red;
     padding: 10px;
 }
 
 .answer-and-question {
     width: 45vw;
+    height: 88.7vh;
+    margin-left: 2vw;
 }
 
 .answer, .question {
     border: 2px solid red;
     font-size: 1vw;
     padding: 10px;
+    overflow: auto;
+}
+
+.question {
+    margin-bottom: 3vh;
+    height: 7vh;
 }
 
 .answer {
-    margin-bottom: 10px;
+    max-height: 58vh;
 }
 
 .main-title {
@@ -52,6 +74,12 @@
     cursor: pointer;
     margin-left: 20px;
     transition: 0.2s;
+    color: white;
+    background-color: red;
+}
+
+.select {
+    margin-left: 20px;
     color: white;
     background-color: red;
 }
