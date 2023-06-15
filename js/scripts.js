@@ -96,5 +96,5 @@ function getLayout(category) {
     // сохраняем категорию в объекте sessionStorage браузера
     sessionStorage.setItem("category", category)
     // открываем страницу шаблона
-    window.location.href = window.location.href.replace("index.html", "layout.html")
+    window.location.href = window.location.href.replace("index.html", "layout.html").replace("index", "layout")
 }
