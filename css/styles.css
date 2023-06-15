@@ -117,7 +117,7 @@ a {
 .questions-container::-webkit-scrollbar-track,
 .question::-webkit-scrollbar-track,
 .answer::-webkit-scrollbar-track {
-    background-color: rgba(128, 128, 128, 0.3);
+    background-color: rgba(128, 128, 128, 0.1);
 }
 
 .questions-container::-webkit-scrollbar-thumb,
