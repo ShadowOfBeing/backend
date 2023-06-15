@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link type="text/css" href="https://shadowofbeing.github.io/backend/css/styles.css" rel="stylesheet" />
     <link type="text/css" href="css/styles.css" rel="stylesheet" />
     <script src="js/scripts.js"></script>
 </head>
@@ -11,7 +10,7 @@
     <div class="main-container">
         <div class="rubrics-menu">
             <div class="title">Категории</div>
-            <a href="index.html"><div class="main-title select">Главная</div></a>
+            <a href="index.html"><div class="main-title index">Главная</div></a>
             <div class="main-title work_place" onclick="getLayout('work_place')">Предыдущий опыт</div>
             <div class="main-title other" onclick="getLayout('other')">Общее</div>
             <div class="main-title python" onclick="getLayout('python')">Python</div>
@@ -25,17 +24,36 @@
             <div class="main-title drf" onclick="getLayout('drf')">DRF</div>
             <div class="main-title brokers" onclick="getLayout('brokers')">Брокеры сообщений</div>
         </div>
-        <div class="main-page-content">
-            1) Чем учить теорию до бесконечности выучите поверхностно любой список вопросов из интернета (топ 50 вопросов
-            по вашему языку, топ 50 вопросов по вашему фреймворку) и идите практиковаться проходить собесы. За 5-6 собесов
-            поймёте, что спрашивают 20-30 одних и тех же вопросов, выпишите их все и что не знаете выучите.
-
-            Советы:
-            - на скрининге эйчары могут поспрашивать технические вопросы по бумажке, либо тест с вариантами ответов, нужно быть готовым
+        <div class="content-box">
+            <div class="questions-menu">
+                <div class="title">Каталог вопросов</div>
+                <div class="questions-container"></div>
+            </div>
+            <div class="answer-and-question">
+                <div class="title">Вопрос</div>
+                <div class="question"></div>
+                <div class="title">Ответ</div>
+                <div class="answer"></div>
+            </div>
         </div>
     </div>
     <script>
+        var category = sessionStorage.getItem("category");
 
+        // заполняем список вопросов
+        getQuestionsList(category);
+
+        // делаем категорию визуально выбранной
+        document.getElementsByClassName(category)[0].classList.add('select');
+
+        // прописываем стиль последнему вопросу в списке
+        var questions = document.getElementsByClassName('question-in-menu');
+
+        var lastQuestion = questions[questions.length - 1];
+        lastQuestion.classList.add("last-question");
+
+        // заполняем первый вопрос и ответ
+        getAnswer(category, 1);
     </script>
 </body>
 </html>
