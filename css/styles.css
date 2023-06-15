@@ -14,7 +14,7 @@
 .main-page-content {
     width: 80.5vw;
     overflow: auto;
-    height: 91vh;
+    height: 92.3vh;
     border: 2px solid red;
     padding: 10px;
     font-size: 2vw;
@@ -28,7 +28,7 @@
 
 .questions-container {
     border: 2px solid red;
-    max-height: 87.8vh;
+    max-height: 86.3vh;
     overflow: auto;
 }
 
@@ -40,9 +40,10 @@
 
 .answer, .question {
     border: 2px solid red;
-    font-size: 1vw;
+    font-size: 1.87vw;
     padding: 10px;
     overflow: auto;
+    word-break: break-all;
 }
 
 .question {
@@ -51,7 +52,7 @@
 }
 
 .answer {
-    max-height: 65.2vh;
+    max-height: 63.8vh;
 }
 
 .main-title {
