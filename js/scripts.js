@@ -26,14 +26,16 @@ answersAndQuestions = {
         8: {'question': 'Что такое вещественные и ссылочные типы данных?', 'answer': 'python answer 8'},
         9: {'question': 'Что такое List Comprehensions?', 'answer': 'python answer 9'},
         10: {'question': 'Что такое генератор в Python?', 'answer': 'python answer 10'},
+        11: {'question': 'Что такое декораторы в Python? Как написать свой декоратор?', 'answer': 'python answer 11'},
     },
     'databases': {
         1: {'question': 'Что такое ACID?', 'answer': 'databases answer 1'},
         2: {'question': 'Какими основными свойствами должна обладать транзакционная база данных?', 'answer': 'ACID'},
         3: {'question': 'Какое из свойств ACID является мнимым?', 'answer': '?'},
-        3: {'question': 'Какие отличия есть между SQL и NoSQL базами данных?', 'answer': 'databases answer 3'},
-        4: {'question': 'Какие существуют SQL и NoSQL базы данных?', 'answer': 'databases answer 4'},
-
+        4: {'question': 'Какие отличия есть между SQL и NoSQL базами данных?', 'answer': 'databases answer 3'},
+        5: {'question': 'Какие существуют SQL и NoSQL базы данных?', 'answer': 'databases answer 4'},
+        6: {'question': 'Что такое транзакция?', 'answer': 'databases answer 6'},
+        7: {'question': 'Что такое индексы в базе данных? Зачем они нужны?', 'answer': 'databases answer 7'},
     },
     'algorithms': {
         1: {'question': 'Что такое Big O?', 'answer': 'algorithms answer 1'},
