@@ -29,9 +29,11 @@ answersAndQuestions = {
     },
     'databases': {
         1: {'question': 'Что такое ACID?', 'answer': 'databases answer 1'},
-        2: {'question': 'Какими основными свойствами должна обладать база данных?', 'answer': 'ACID'},
+        2: {'question': 'Какими основными свойствами должна обладать транзакционная база данных?', 'answer': 'ACID'},
+        3: {'question': 'Какое из свойств ACID является мнимым?', 'answer': '?'},
         3: {'question': 'Какие отличия есть между SQL и NoSQL базами данных?', 'answer': 'databases answer 3'},
         4: {'question': 'Какие существуют SQL и NoSQL базы данных?', 'answer': 'databases answer 4'},
+
     },
     'algorithms': {
         1: {'question': 'Что такое Big O?', 'answer': 'algorithms answer 1'},

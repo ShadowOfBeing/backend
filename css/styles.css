@@ -14,7 +14,6 @@
 .main-page-content {
     width: 80.5vw;
     overflow: auto;
-    height: 92.3vh;
     border: 2px solid red;
     padding: 10px;
     font-size: 2vw;
@@ -23,7 +22,7 @@
 
 .questions-menu {
     width: 25vw;
-    height: 86.7vh;
+    max-height: 86.7vh;
 }
 
 .questions-container {
@@ -108,27 +107,34 @@ a {
     margin-bottom: 0;
 }
 
+/* кастомный скролл */
+.main-page-content::-webkit-scrollbar,
 .questions-container::-webkit-scrollbar,
 .question::-webkit-scrollbar,
 .answer::-webkit-scrollbar {
     width: 10px;
 }
 
+.main-page-content::-webkit-scrollbar-track,
 .questions-container::-webkit-scrollbar-track,
 .question::-webkit-scrollbar-track,
 .answer::-webkit-scrollbar-track {
     background-color: rgba(128, 128, 128, 0.1);
 }
 
+.main-page-content::-webkit-scrollbar-thumb,
 .questions-container::-webkit-scrollbar-thumb,
 .question::-webkit-scrollbar-thumb,
 .answer::-webkit-scrollbar-thumb {
-    background-color: rgba(128, 128, 128, 0.3);
+    background-color: rgba(256, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
+.main-page-content,
 .questions-container,
 .question,
 .answer {
     scrollbar-width: thin;
-    scrollbar-color: rgba(128, 128, 128, 0.3);
+    scrollbar-color: rgba(256, 0, 0, 0.5);
+    border-radius: 15px;
 }
