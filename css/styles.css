@@ -49,6 +49,7 @@
 .question {
     margin-bottom: 3vh;
     height: 12vh;
+    overflow: hidden;
 }
 
 .answer {
@@ -56,7 +57,7 @@
 }
 
 .main-title {
-    font-size: 1.87vw;
+    font-size: 1.67vw;
     width: 90%;
     border: 2px solid red;
     margin: 5px;
@@ -89,7 +90,13 @@
     font-size: 2vw;
     padding: 10px;
     border: 1px solid white;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
+    border-bottom: 1px solid red;
+}
+
+.select-question {
+    color: white;
+    background-color: red;
 }
 
 a {
@@ -106,6 +113,7 @@ a {
 
 .last-question {
     margin-bottom: 0;
+    border-bottom: 1px solid white;
 }
 
 /* кастомный скролл */

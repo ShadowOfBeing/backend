@@ -9,20 +9,7 @@
 <body>
     <div class="main-container">
         <div class="rubrics-menu">
-            <div class="title">Категории</div>
-            <a href="index.html"><div class="main-title select">Главная</div></a>
-            <div class="main-title work" onclick="getLayout('work')">О работе</div>
-            <div class="main-title other" onclick="getLayout('other')">Общее</div>
-            <div class="main-title python" onclick="getLayout('python')">Python</div>
-            <div class="main-title databases" onclick="getLayout('databases')">Базы данных</div>
-            <div class="main-title algorithms" onclick="getLayout('algorithms')">Алгоритмы</div>
-            <div class="main-title tests" onclick="getLayout('tests')">Тестирование</div>
-            <div class="main-title oop" onclick="getLayout('oop')">ООП</div>
-            <div class="main-title django" onclick="getLayout('django')">Django</div>
-            <div class="main-title git" onclick="getLayout('git')">Git</div>
-            <div class="main-title docker" onclick="getLayout('docker')">Docker</div>
-            <div class="main-title drf" onclick="getLayout('drf')">DRF</div>
-            <div class="main-title brokers" onclick="getLayout('brokers')">Брокеры сообщений</div>
+
         </div>
         <div class="main-page-content">
             Совет №1: если крутите опыт, то очень хорошо проработайте легенду, посмотрите телеграм-канал "Один день ITтишника",
@@ -50,6 +37,7 @@
             стоит загоняться по поводу причины отказа, причины могут быть совершенно разные:<br>
             - недостаточные знания<br>
             - не устроила причина твоего увольнения с последнего места работы<br>
+            - в резюме слишком частые смены работ<br>
             - вакансия уже закрылась (хотя эту причину обычно озвучивают)<br>
             - ты попросил слишком много денег<br>
             - не понравилась твоя внешность<br>
@@ -68,10 +56,25 @@
             <br><br>
             Совет №8: когда будете с эйчаром выбирать дату техсобеса, выбирайте день как можно раньше. Выучить что-то за несколько
             дней в любом случае не успеете, а вот потерять вакансию шансы увеличиваются.
+            <br><br>
+            Совет №9: не стоит переоценивать знание фреймворков, довольно редко задают вопросы на знание конкретного фреймворка
+            и даже если спросят, то скорее всего какие то поверхностные вопросы. Чаще спрашивают фундаментальные вопросы:
+            базы данных, асинхронность, знание языка.
+            <br><br>
+            Совет №10: не приходите на собеседование уставшим, в состоянии опьянения, в плохом самочувствии, лучше в
+            таком случае объясниться и попросить перенести встречу.
+            <br><br>
+            Совет №11: если не знаете ответа, то не нужно мяться и делать долгих пауз, лучше сказать честно, что либо
+            забыл, либо не сталкивался с таким в работе, но попробуешь порассуждать. Обращают внимание как ты отвечаешь
+            на вопросы на которые не знаешь ответа, пробуешь ли рассуждать, смотрят за логикой рассуждений.
+            <br><br>
+            Совет №12: обязательно задавайте вопросы эйчару, отсутствие вопросов может произвести впечатление, что ты
+            не сильно заинтересован в вакансии.
         </div>
     </div>
     <script>
-
+        getRubrics();
+        document.querySelector('link[href="style.css"]').setAttribute('href', 'style.css?' + Math.random());
     </script>
 </body>
 </html>
