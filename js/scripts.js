@@ -183,6 +183,13 @@ answersAndQuestions = {
             8: {'question': 'Какие стандартные методы есть у классов в Python?',
                 'answer': `- __init__<br>
                            - __str__<br>`},
+            9: {'question': 'Как получить все свойства класса в Python?',
+                'answer': `Можно использовать функцию dir(), которая вернёт все свойства и методы класса, а затем
+                           исключить методы. Например, так можно реализовать метод, обнуляющий все свойства в классе:<br>
+                           def reset(self):<br>
+                           &nbsp;&nbsp;&nbsp;&nbsp;for attr in dir(self):<br>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not callable(getattr(self, attr)) and not attr.startswith("__"):<br>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setattr(self, attr, None)`},
     },
     'django': {
         1: {'question': 'Что нового в версиях Django 2.x/3.x/4.x?',
