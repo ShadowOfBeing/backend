@@ -28,13 +28,12 @@ answersAndQuestions = {
         10: {'question': 'Что такое генератор в Python?', 'answer': 'python answer 10'},
         11: {'question': 'Что такое декораторы в Python? Как написать свой декоратор?', 'answer': 'python answer 11'},
         12: {'question': 'Какие есть изменения в версиях Python 2.x/3.x?',
-             'answer':
-             `Версия 3.4 (16 мар 2014):<br>
-              - добавлена библиотека asyncio (асинхронность)<br>
-              Версия 3.5 (13 сен 2015):<br>
-              - добавлена библиотека typing (аннотация типов)<br>
-              Версия 3.8 (21 окт 2019):<br>
-              - добавлен моржовый оператор (:=)<br>`},
+             'answer': `Версия 3.4 (16 мар 2014):<br>
+                        - добавлена библиотека asyncio (асинхронность)<br>
+                        Версия 3.5 (13 сен 2015):<br>
+                        - добавлена библиотека typing (аннотация типов)<br>
+                        Версия 3.8 (21 окт 2019):<br>
+                        - добавлен моржовый оператор (:=)<br>`},
     },
     'async': {
         1: {'question': 'Есть ли асинхронность в Django?',
@@ -77,9 +76,8 @@ answersAndQuestions = {
              помечает функцию как асинхронную, а await используется для ожидания результата работы функции. Например:
              `},
         3: {'question': 'Зачем нужно асинхронное выполнение кода?',
-            'answer':
-            `В контексте backend-разработки асинхронное выполнение кода нужно для того, чтобы запросы к базе данных не
-             замедляли выполнение кода и выполнялись параллельно остальному коду`},
+            'answer': `В контексте backend-разработки асинхронное выполнение кода нужно для того, чтобы запросы к базе
+                       данных не замедляли выполнение кода и выполнялись параллельно остальному коду`},
     },
     'databases': {
         1: {'question': 'Что такое ACID?', 'answer': 'databases answer 1'},
@@ -94,14 +92,14 @@ answersAndQuestions = {
                          В каких случаях это требовалось?`,
             'answer': 'databases answer 8'},
         9: {'question': 'Какие типы JOIN есть в SQL?',
-            'answer':
-            `- INNER JOIN<br>
-             - LEFT JOIN<br>
-             - RIGHT JOIN<br>
-             - FULL OUTER JOIN<br>
-             - CROSS JOIN<br>
-             - SELF JOIN<br>`},
-        10: {'question': '5x10', 'answer': 'databases answer 6'},
+            'answer': `- INNER JOIN<br>
+                       - LEFT JOIN<br>
+                       - RIGHT JOIN<br>
+                       - FULL OUTER JOIN<br>
+                       - CROSS JOIN<br>
+                       - SELF JOIN<br>`},
+        10: {'question': 'Есть две таблицы - на 10 и на 5 записей. Сколько записей станет при CROSS JOIN объединении? А при INNER JOIN?',
+             'answer': 'При CROSS JOIN записей в объединённой таблице записей будет 50, а при INNER JOIN 10 или 5 записей.'},
     },
     'algorithms': {
         1: {'question': 'Что такое Big O?', 'answer': 'algorithms answer 1'},
@@ -114,11 +112,10 @@ answersAndQuestions = {
     'tests': {
         1: {'question': 'Какой процент кода нужно покрывать тестами?', 'answer': 'tests answer 1'},
         2: {'question': 'Какие инструменты для тестирования существуют?',
-            'answer':
-            `- библиотека pytest<br>
-             - Postman для тестирования API<br>
-             - Selenium для автоматизации ручного тестирования<br>
-             - Linter для проверки Code Style`},
+            'answer': `- библиотека pytest<br>
+                       - Postman для тестирования API<br>
+                       - Selenium для автоматизации ручного тестирования<br>
+                       - Linter для проверки Code Style`},
         3: {'question': 'Что такое unit-тесты? Зачем они нужны?',
             'answer': 'unit-тесты проверяют работоспособность отдельных модулей проекта'},
     },
@@ -183,22 +180,32 @@ answersAndQuestions = {
                        `},
             7: {'question': 'Как проверить, что элемент является экземпляром класса?',
                 'answer': 'isinstance(my_element, TargetClass)'},
+            8: {'question': 'Какие стандартные методы есть у классов в Python?',
+                'answer': `- __init__<br>
+                           - __str__<br>`},
     },
     'django': {
         1: {'question': 'Что нового в версиях Django 2.x/3.x/4.x?',
-            'answer':
-            `Версия 3.0 (2 дек 2019):<br>
-             - добавлена поддержка MariaDB, ASGI<br>
-             Версия 3.1 (4 авг 2020):<br>
-             - добавлена поддержка асинхронных view и middleware<br>
-             Версия 4.1 (3 авг 2022):<br>
-             - добавлен асинхронный интерфейс к ORM`},
+            'answer': `Версия 3.0 (2 дек 2019):<br>
+                       - добавлена поддержка MariaDB, ASGI<br>
+                       Версия 3.1 (4 авг 2020):<br>
+                       - добавлена поддержка асинхронных view и middleware<br>
+                       Версия 4.1 (3 авг 2022):<br>
+                       - добавлен асинхронный интерфейс к ORM`},
         2: {'question': 'Что такое миграции в Django?', 'answer': 'django answer 2'},
         3: {'question': 'Что такое модели в Django?', 'answer': 'django answer 3'},
     },
     'git': {
         1: {'question': 'В чём отличие merge от rebase?', 'answer': 'git answer 1'},
-        2: {'question': 'git question 2', 'answer': 'git answer 2'},
+        2: {'question': 'Какие команды git вы использовали в работе?',
+            'answer': `- git clone<br>
+                       - git add<br>
+                       - git commit<br>
+                       - git push<br>
+                       - git pull<br>
+                       - git rebase<br>
+                       - git merge<br>
+                       - git amend<br>`},
         3: {'question': 'git question 3', 'answer': 'git answer 3'},
     },
     'docker': {
@@ -209,29 +216,34 @@ answersAndQuestions = {
     'drf': {
         1: {'question': 'Что такое сериализаторы в DRF?', 'answer': 'drf answer 1'},
         2: {'question': 'Как в DRF настраивается роутинг URL?',
-            'answer':
-            `Пример создания роутеров для методов /departments и /employees в файле urls.py:<br>
-             from django.urls import include, path<br>
-             from rest_framework import routers<br>
-             from .views import DepartmentViewSet, EmployeeViewSet<br>
-             <br>
-             router = routers.DefaultRouter()<br>
-             router.register(r'departments', DepartmentViewSet)<br>
-             router.register(r'employees', EmployeeViewSet)<br>
-             <br>
-             urlpatterns = [<br>
-             &nbsp;&nbsp;&nbsp;&nbsp;path('', include(router.urls)),<br>
-             ]`},
+            'answer': `Пример создания роутеров для методов /departments и /employees в файле urls.py:<br>
+                       from django.urls import include, path<br>
+                       from rest_framework import routers<br>
+                       from .views import DepartmentViewSet, EmployeeViewSet<br>
+                       <br>
+                       router = routers.DefaultRouter()<br>
+                       router.register(r'departments', DepartmentViewSet)<br>
+                       router.register(r'employees', EmployeeViewSet)<br>
+                       <br>
+                       urlpatterns = [<br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;path('', include(router.urls)),<br>
+                       ]`},
         3: {'question': 'Как сделать разграничение прав для API метода в DRF?',
             'answer':
             `Для этого в класс-представление нужно добавить поле permission_classes = [] и в нём указать каким группам
              разрешено использовать данный API метод. Например:<br>
              permission_classes = [IsAuthenticated, IsAuthenticatedOrReadOnly]`},
         4: {'question': 'Какие уровни разграничения прав к API методам есть в DRF?',
-            'answer':
-            `- IsAuthenticated<br>
-             - IsAuthenticatedOrReadOnly<br>
-             - ?`},
+            'answer': `- IsAuthenticated<br>
+                       - IsAuthenticatedOrReadOnly<br>
+                       - ?`},
+        5: {'question': 'Что такое встроенные DRF фильтры?',
+            'answer': `Встроенные DRF фильтры - это набор классов фильтров, предоставляемых Django REST Framework "из коробки"
+                       для фильтрации queryset'ов в представлениях API. Список фильтров:<br>
+                       - DjangoFilterBackend<br>
+                       - SearchFilter<br>
+                       - OrderingFilter<br>
+                       - Pagination`},
     },
     'brokers': {
         1: {'question': 'Зачем нужны брокеры сообщений?', 'answer': 'brokers answer 1'},
@@ -243,6 +255,9 @@ answersAndQuestions = {
         1: {'question': 'Что такое REST?', 'answer': 'other answer 1'},
         2: {'question': 'Что такое KISS?', 'answer': 'other answer 2'},
         3: {'question': 'Что такое DRY?', 'answer': 'other answer 3'},
+        4: {'question': 'Что такое вебсокеты?', 'answer': 'other answer 4'},
+        5: {'question': 'Что такое монолит и микросервисы?', 'answer': 'other answer 5'},
+        6: {'question': 'Как вы изучали программирование?', 'answer': 'other answer 6'},
     },
 }
 
