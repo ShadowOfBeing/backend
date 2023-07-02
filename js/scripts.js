@@ -99,7 +99,7 @@ answersAndQuestions = {
                        - CROSS JOIN<br>
                        - SELF JOIN<br>`},
         10: {'question': 'Есть две таблицы - на 10 и на 5 записей. Сколько записей станет при CROSS JOIN объединении? А при INNER JOIN?',
-             'answer': 'При CROSS JOIN записей в объединённой таблице записей будет 50, а при INNER JOIN 10 или 5 записей.'},
+             'answer': 'При CROSS JOIN в объединённой таблице записей будет 50, а при INNER JOIN 10 или 5 записей.'},
     },
     'algorithms': {
         1: {'question': 'Что такое Big O?', 'answer': 'algorithms answer 1'},
