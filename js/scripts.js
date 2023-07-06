@@ -230,7 +230,7 @@ answersAndQuestions = {
                        - Postman для тестирования API<br>
                        - Selenium для автоматизации ручного тестирования<br>
                        - Linter для проверки Code Style`},
-        3: {'question': 'Какие виды тестирования существуют?',
+        3: {'question': 'Какие виды тестирования существуют в backend проектах на Python?',
             'answer': `- unit-тесты<br>
                        - интеграционные тесты<br>
                        - mock-тестирование`},
@@ -300,7 +300,7 @@ answersAndQuestions = {
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Deleting val")<br>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;del self._val<br>
                        `},
-        7: {'question': 'Как проверить, что элемент является экземпляром класса?',
+        7: {'question': 'Как проверить, что элемент является экземпляром класса в Python?',
             'answer': 'isinstance(my_element, TargetClass)'},
         8: {'question': 'Какие стандартные методы есть у классов в Python?',
             'answer': `- __init__<br>
