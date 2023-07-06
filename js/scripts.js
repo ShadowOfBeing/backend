@@ -510,28 +510,6 @@ function getLayout(category) {
     //if (category == 'main') {}
 }
 
-function getRubrics() {
-    var rubricsContainer = document.getElementsByClassName('rubrics-menu')[0]
-    var rubrics = `
-            <div class="title">Категории</div>
-            <div class="main-title main" onclick="getLayout('main')">Главная</div>
-            <div class="main-title work" onclick="getLayout('work')">О работе</div>
-            <div class="main-title other" onclick="getLayout('other')">Общее</div>
-            <div class="main-title python" onclick="getLayout('python')">Python</div>
-            <div class="main-title async" onclick="getLayout('async')">Асинхронность</div>
-            <div class="main-title databases" onclick="getLayout('databases')">Базы данных</div>
-            <div class="main-title tests" onclick="getLayout('tests')">Тестирование</div>
-            <div class="main-title oop" onclick="getLayout('oop')">ООП</div>
-            <div class="main-title django" onclick="getLayout('django')">Django</div>
-            <div class="main-title git" onclick="getLayout('git')">Git</div>
-            <div class="main-title brokers" onclick="getLayout('brokers')">Брокеры сообщений</div>
-            <div class="main-title docker" onclick="getLayout('docker')">Docker</div>
-            <div class="main-title algorithms" onclick="getLayout('algorithms')">Алгоритмы</div>
-            <div class="main-title drf" onclick="getLayout('drf')">DRF</div>
-    `
-    rubricsContainer.innerHTML = rubrics
-}
-
 var mainText = `
     <div class="main-page-content">
         Совет №1: если крутите опыт, то очень хорошо проработайте легенду, посмотрите телеграм-канал "Один день ITтишника",
