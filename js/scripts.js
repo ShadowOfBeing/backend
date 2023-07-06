@@ -73,7 +73,8 @@ answersAndQuestions = {
         7: {'question': 'Какие изменяемые и неизменяемые типы данных есть в Python?', 'answer': 'python answer 7'},
         8: {'question': 'Что такое вещественные и ссылочные типы данных?', 'answer': 'python answer 8'},
         9: {'question': 'Что такое List Comprehensions?', 'answer': 'python answer 9'},
-        10: {'question': 'Что такое генератор в Python?', 'answer': 'python answer 10'},
+        10: {'question': 'Что такое генератор (yield) в Python?',
+             'answer': 'python answer 10'},
         11: {'question': 'Что такое декораторы в Python? Как написать свой декоратор?', 'answer': 'python answer 11'},
         12: {'question': 'Какие есть изменения в версиях Python 2.x/3.x?',
              'answer': `Версия 3.4 (16 мар 2014):<br>
@@ -469,6 +470,10 @@ answersAndQuestions = {
                          то что произойдёт?`,
             'answer': 'linux answer 2'},
         3: {'question': 'Как посмотреть все процессы?', 'answer': 'linux answer 3'},
+    },
+    'review': {
+        1: {'question': 'первый пример', 'answer': 'ревью первого примера'},
+        2: {'question': 'второй пример', 'answer': 'ревью второго примера'},
     },
 }
 
