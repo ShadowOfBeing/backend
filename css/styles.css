@@ -9,7 +9,8 @@
 
 .content-box {
     display: flex;
-    margin: 0 2vw auto;
+    margin-top: 0;
+    margin-left: 1vw;
 }
 
 .main-page-content {
@@ -33,9 +34,9 @@
 }
 
 .answer-and-question {
-    width: 45vw;
+    width: 46vw;
     height: 88.7vh;
-    margin-left: 2vw;
+    margin-left: 1.3vw;
 }
 
 .answer, .question {
@@ -74,20 +75,20 @@
 
 .main-title:hover {
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 1.2vw;
     transition: 0.2s;
     color: white;
     background-color: red;
 }
 
 .select {
-    margin-left: 20px;
+    margin-left: 1.2vw;
     color: white;
     background-color: red;
 }
 
 .question-in-menu {
-    font-size: 2vw;
+    font-size: 1.4vw;
     padding: 10px;
     border: 1px solid white;
     /*margin-bottom: 10px;*/

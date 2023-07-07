@@ -460,6 +460,20 @@ answersAndQuestions = {
                        - SearchFilter<br>
                        - OrderingFilter<br>
                        - Pagination`},
+        6: {'question': 'Как в DRF добавить свой API метод с помощью ViewSet?',
+            'answer': `Для этого можно использовать декоратор @action, он позволяет добавить кастомные методы к вашему
+                       ViewSet.<br>
+                       1) Определите свой метод внутри класса ViewSet, добавив декоратор @action перед его определением.<br>
+                       2) Укажите тип метода (например, GET, POST и т. д.) в качестве параметра detail декоратора @action.<br>
+                       3) Определите URL-шаблон для вашего метода, передав шаблон в качестве параметра url_path декоратора @action.<br>
+                       <br>
+                       `},
+        7: {'question': 'Как в DRF посмотреть все API методы?',
+            'answer': `Запустить локальный сервер и в адресной строке набрать 127.0.0.1:8000/api/`},
+        8: {'question': 'Что такое Generics в DRF?',
+            'answer': 'drf answer 8'},
+        9: {'question': 'Что такое ModelViewSet в DRF? Что он в себя включает?',
+            'answer': 'drf answer 9'},
     },
     'brokers': {
         1: {'question': 'Зачем нужны брокеры сообщений?', 'answer': 'brokers answer 1'},
