@@ -1,0 +1,81 @@
+.main-container-mobile {
+    width: 100%;
+}
+
+.category-mobile-btn,
+.questions-mobile-btn {
+    font-size: 10vw;
+    text-decoration: underline;
+    margin-left: 5vw;
+    position: relative;
+}
+
+.category-mobile,
+.questions-menu-mobile {
+    display: none;
+    position: fixed;
+    top: 7%;
+    left: 7%;
+    z-index: 100;
+}
+
+.active {
+    display: block;
+    width: 100vw;
+}
+
+.title-mobile {
+    font-size: 10vw;
+    text-decoration: underline;
+    margin-left: 3vw;
+    margin-bottom: 2vw;
+}
+
+#microphone-mobile {
+    position: absolute;
+    left: 150%;
+    top: 0%;
+    width: 12vw;
+}
+
+#microphone-mobile:hover {
+    cursor: pointer;
+}
+
+.content-box-mobile {
+    position: fixed;
+    top: 15vh;
+    margin-top: 0;
+    margin-left: 1vw;
+}
+
+.questions-container-mobile {
+    border: 2px solid red;
+    overflow: auto;
+}
+
+.answer-and-question-mobile {
+    height: 88.7vh;
+    margin-left: 1.3vw;
+    margin-right: 1.3vw;
+}
+
+.question-mobile {
+    font-size: 10vw;
+    margin-bottom: 3vh;
+    height: 12vh;
+    overflow: auto;
+    border: 2px solid red;
+    padding: 2vw;
+}
+
+.answer-mobile {
+    font-size: 10vw;
+    overflow: auto;
+    border: 2px solid red;
+    padding: 2vw;
+}
+
+.mobile {
+    font-size: 10vw;
+}

@@ -64,6 +64,7 @@
     margin: 5px;
     padding: 8px;
     transition: 0.2s;
+    background-color: white;
 }
 
 .title {
@@ -93,6 +94,7 @@
     border: 1px solid white;
     /*margin-bottom: 10px;*/
     border-bottom: 1px solid red;
+    background-color: white;
 }
 
 .select-question {
@@ -172,21 +174,4 @@ a {
 
 #microphone:hover {
     cursor: pointer;
-}
-
-@media (max-width: 767px) {
-  /* Стили для экранов шириной до 767 пикселей (мобильные устройства) */
-  .block-to-hide {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  /* Стили для экранов шириной от 768 пикселей (десктоп) */
-  .block-to-hide {
-    display: block;
-  }
-  .collapsed-block {
-    display: none;
-  }
 }

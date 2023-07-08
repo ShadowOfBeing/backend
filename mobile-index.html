@@ -4,50 +4,50 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link type="text/css" href="css/styles.css" rel="stylesheet" />
+    <link type="text/css" href="css/mobile.css" rel="stylesheet" />
     <script src="js/scripts.js"></script>
 </head>
 <body>
-    <div class="main-container">
-        <div class="rubrics-menu">
-            <div class="title" id="category-title">
-                Категории
-                <img id="microphone" src="./img/microphone.png" alt="microphone" onclick="startRecognition()">
-            </div>
-            <div class="main-title main" onclick="getLayout('main')">Главная</div>
-            <div class="main-title work" onclick="getLayout('work')">О работе</div>
-            <div class="main-title other" onclick="getLayout('other')">Общее</div>
-            <div class="main-title python" onclick="getLayout('python')">Python</div>
-            <div class="main-title databases" onclick="getLayout('databases')">Базы данных, SQL</div>
-            <div class="main-title oop" onclick="getLayout('oop')">ООП</div>
-            <div class="main-title async" onclick="getLayout('async')">Асинхронность</div>
-            <div class="main-title review" onclick="getLayout('review')">Code Review</div>
-            <div class="main-title tests" onclick="getLayout('tests')">Тестирование</div>
-            <div class="main-title django" onclick="getLayout('django')">Django</div>
-            <div class="main-title git" onclick="getLayout('git')">Git</div>
-            <div class="main-title docker" onclick="getLayout('docker')">Docker</div>
-            <div class="main-title algorithms" onclick="getLayout('algorithms')">Алгоритмы</div>
-            <div class="main-title linux" onclick="getLayout('linux')">Linux</div>
-            <div class="main-title drf" onclick="getLayout('drf')">DRF</div>
-            <div class="main-title brokers" onclick="getLayout('brokers')">Брокеры сообщений</div>
+    <div class="main-container-mobile">
+        <div class="category-mobile-btn" onclick="openCategoryMenu()">
+            Категория
+            <img id="microphone-mobile" src="./img/microphone.png" alt="microphone" onclick="startRecognition()">
         </div>
-        <div class="content-box">
-            <div class="questions-menu">
-                <div class="title">Каталог вопросов</div>
-                <div class="questions-container"></div>
-            </div>
-            <div class="answer-and-question">
-                <div class="title">Вопрос</div>
-                <div class="question"></div>
-                <div class="title">Ответ</div>
-                <div class="answer"></div>
+        <div class="category-mobile">
+            <div class="main-title mobile main" onclick="getLayout('main')">Главная</div>
+            <div class="main-title mobile work" onclick="getLayout('work')">О работе</div>
+            <div class="main-title mobile other" onclick="getLayout('other')">Общее</div>
+            <div class="main-title mobile python" onclick="getLayout('python')">Python</div>
+            <div class="main-title mobile databases" onclick="getLayout('databases')">Базы данных, SQL</div>
+            <div class="main-title mobile oop" onclick="getLayout('oop')">ООП</div>
+            <div class="main-title mobile async" onclick="getLayout('async')">Асинхронность</div>
+            <div class="main-title mobile review" onclick="getLayout('review')">Code Review</div>
+            <div class="main-title mobile tests" onclick="getLayout('tests')">Тестирование</div>
+            <div class="main-title mobile django" onclick="getLayout('django')">Django</div>
+            <div class="main-title mobile git" onclick="getLayout('git')">Git</div>
+            <div class="main-title mobile docker" onclick="getLayout('docker')">Docker</div>
+            <div class="main-title mobile algorithms" onclick="getLayout('algorithms')">Алгоритмы</div>
+            <div class="main-title mobile linux" onclick="getLayout('linux')">Linux</div>
+            <div class="main-title mobile drf" onclick="getLayout('drf')">DRF</div>
+            <div class="main-title mobile brokers" onclick="getLayout('brokers')">Брокеры сообщений</div>
+        </div>
+        <div class="questions-mobile-btn" onclick="openQuestionsMenu()">
+            Список вопросов
+        </div>
+        <div class="questions-menu-mobile">
+            <div class="title-mobile">Каталог вопросов</div>
+            <div class="questions-container-mobile"></div>
+        </div>
+        <div class="content-box-mobile">
+            <div class="answer-and-question-mobile">
+                <div class="title-mobile">Вопрос</div>
+                <div class="question-mobile"></div>
+                <div class="title-mobile">Ответ</div>
+                <div class="answer-mobile"></div>
             </div>
         </div>
     </div>
     <script>
-        if (screen.width <= 767) { // если ширина экрана меньше 767 пикселей
-          window.location = "/backend/mobile-index.html"; // перенаправляем пользователя на мобильную версию сайта
-        }
-
         var category = sessionStorage.getItem("category");
 
         if (!category || category == 'main') {
@@ -55,13 +55,13 @@
             document.getElementsByClassName('main')[0].classList.add('select');
 
             // удаляем контейнер для вопросов/ответов
-            document.getElementsByClassName('content-box')[0].remove();
+            document.getElementsByClassName('content-box-mobile')[0].remove();
 
             // добавляем контент главной страницы
-            document.getElementsByClassName('main-container')[0].innerHTML += mainText;
+            document.getElementsByClassName('main-container-mobile')[0].innerHTML += mainText;
         } else {
             // заполняем список вопросов
-            getQuestionsList(category);
+            getQuestionsList(category, 'mobile');
 
             // делаем категорию визуально выбранной
             document.getElementsByClassName(category)[0].classList.add('select');
@@ -72,7 +72,7 @@
             lastQuestion.classList.add("last-question");
 
             // заполняем первый вопрос и ответ
-            getAnswer(category, 1);
+            getAnswer(category, 1, 'mobile');
         }
 
         // ГОЛОСОВЫЕ КОМАНДЫ

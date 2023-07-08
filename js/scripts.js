@@ -506,9 +506,9 @@ answersAndQuestions = {
     },
 }
 
-function getAnswer(category, answerID) {
-    var question = document.getElementsByClassName('question')[0]
-    var answer = document.getElementsByClassName('answer')[0]
+function getAnswer(category, answerID, option) {
+    var question = option ? document.getElementsByClassName('question-mobile')[0] : document.getElementsByClassName('question')[0]
+    var answer = option ? document.getElementsByClassName('answer-mobile')[0] : document.getElementsByClassName('answer')[0]
     var questionInMenu = document.getElementById('question ' + answerID)
     var prevSelectQ = document.getElementById(sessionStorage.getItem('prevSelectQuestion') || 'question 1')
 
@@ -520,11 +520,15 @@ function getAnswer(category, answerID) {
     sessionStorage.setItem('prevSelectQuestion', 'question ' + answerID)
 }
 
-function getQuestionsList(category) {
-    var questionsContainer = document.getElementsByClassName('questions-container')[0]
+function getQuestionsList(category, option) {
+    var questionsContainer = option ? document.getElementsByClassName('questions-container-mobile')[0] : document.getElementsByClassName('questions-container')[0]
     var questionsHTML = ''
     for (var i = 1; i <= Object.keys(answersAndQuestions[category]).length; i++) {
-        questionsHTML += `<div id="question ${i}" class="question-in-menu" onclick="getAnswer('${category}', ${i})">${answersAndQuestions[category][i]['question']}</div>`
+        if (option) {
+            questionsHTML += `<div id="question ${i}" class="question-in-menu mobile" onclick="getAnswer('${category}', ${i})">${answersAndQuestions[category][i]['question']}</div>`
+        } else {
+            questionsHTML += `<div id="question ${i}" class="question-in-menu" onclick="getAnswer('${category}', ${i})">${answersAndQuestions[category][i]['question']}</div>`
+        }
     }
     questionsContainer.innerHTML = questionsHTML
 }
@@ -626,4 +630,13 @@ function runCommand(data) {
     } else {
         alert('неизвестная команда')
     }
+}
+
+// для мобильной страницы
+function openCategoryMenu() {
+    document.getElementsByClassName('category-mobile')[0].classList.toggle('active')
+}
+
+function openQuestionsMenu() {
+    document.getElementsByClassName('questions-menu-mobile')[0].classList.toggle('active')
 }
