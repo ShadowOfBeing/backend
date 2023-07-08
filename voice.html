@@ -11,7 +11,8 @@
         <button class="startVoice" onclick="startRecognition()" type="button">пуск</button>
     </div>
     <script>
-        const recognition = new window.SpeechRecognition(); // Создание объекта распознавания речи
+        const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new speechRecognition() // Создание объекта распознавания речи
         recognition.lang = "ru-RU"; // Установка языка распознавания
         recognition.interimResults = false; // Устанавливаем, чтобы результаты отображались только после завершения записи речи
         recognition.maxAlternatives = 1; // Устанавливаем максимальное число альтернатив распознавания
