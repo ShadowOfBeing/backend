@@ -608,7 +608,21 @@ function runCommand(data) {
     if (hello.test(data)) {
         alert('и тебе привет')
     } else if (random.test(data)) {
-        alert('показываю случайный вопрос')
+        // Получаем массив всех ключей объекта answersAndQuestions
+        const jobKeys = Object.keys(answersAndQuestions);
+
+        // Выбираем случайный ключ из jobKeys
+        const randomJobKey = jobKeys[Math.floor(Math.random() * jobKeys.length)];
+
+        // Получаем массив всех вопросов из выбранного объекта
+        const questions = Object.values(answersAndQuestions[randomJobKey]);
+
+        // Получаем случайный индекс из массива questions
+        const randomIndex = Math.floor(Math.random() * questions.length);
+
+        // Получаем случайный вопрос
+        const randomQuestion = questions[randomIndex].question;
+        alert(randomQuestion)
     } else {
         alert('неизвестная команда')
     }
