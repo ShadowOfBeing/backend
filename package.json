@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "vosk": "0.3.30",
+    "vosk-api": "0.3.21",
+    "voskjs": "0.2.0"
+  }
+}

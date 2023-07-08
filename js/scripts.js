@@ -601,3 +601,15 @@ var mainText = `
         не сильно заинтересован в вакансии.
     </div>
 `
+
+function runCommand(data) {
+    const hello = /привет/i
+    const random = /любой вопрос/i
+    if (hello.test(data)) {
+        alert('и тебе привет')
+    } else if (random.test(data)) {
+        alert('показываю случайный вопрос')
+    } else {
+        alert('неизвестная команда')
+    }
+}
