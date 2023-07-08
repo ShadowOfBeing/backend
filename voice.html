@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="css/styles.css" rel="stylesheet" />
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <div class="qqq">
+        <button onclick="startRecognition()"></button>
+    </div>
+    <script>
+        const recognition = new window.webkitSpeechRecognition(); // Создание объекта распознавания речи
+        recognition.lang = "ru-RU"; // Установка языка распознавания
+        recognition.interimResults = false; // Устанавливаем, чтобы результаты отображались только после завершения записи речи
+        recognition.maxAlternatives = 1; // Устанавливаем максимальное число альтернатив распознавания
+
+        // Обработчик события, вызываемый после завершения распознавания речи
+        recognition.onresult = function(event) {
+          const result = event.results[0][0].transcript; // Получаем распознанный текст
+          alert(result); // Выводим распознанный текст в консоль
+        };
+
+        // Обработчик события, вызываемый при ошибке распознавания речи
+        recognition.onerror = function(event) {
+          alert(event.error); // Выводим ошибку в консоль
+        };
+
+        // Функция, которая запускает процесс распознавания речи
+        function startRecognition() {
+          recognition.start(); // Запуск распознавания речи
+        }
+    </script>
+</body>
+</html>
