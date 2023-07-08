@@ -159,3 +159,17 @@ a {
 .startVoice {
     font-size: 5vw;
 }
+
+#category-title {
+    position: relative;
+}
+
+#microphone {
+    position: absolute;
+    left: 85%;
+    top: 15%;
+}
+
+#microphone:hover {
+    cursor: pointer;
+}

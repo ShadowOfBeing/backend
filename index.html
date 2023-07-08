@@ -9,7 +9,10 @@
 <body>
     <div class="main-container">
         <div class="rubrics-menu">
-            <div class="title">Категории</div>
+            <div class="title" id="category-title">
+                Категории
+                <img id="microphone" src="/img/microphone.png" alt="microphone" onclick="startRecognition()">
+            </div>
             <div class="main-title main" onclick="getLayout('main')">Главная</div>
             <div class="main-title work" onclick="getLayout('work')">О работе</div>
             <div class="main-title other" onclick="getLayout('other')">Общее</div>
@@ -66,6 +69,31 @@
 
             // заполняем первый вопрос и ответ
             getAnswer(category, 1);
+        }
+
+        // ГОЛОСОВЫЕ КОМАНДЫ
+        const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new speechRecognition() // Создание объекта распознавания речи
+        recognition.lang = "ru-RU"; // Установка языка распознавания
+        recognition.interimResults = false; // Устанавливаем, чтобы результаты отображались только после завершения записи речи
+        recognition.maxAlternatives = 1; // Устанавливаем максимальное число альтернатив распознавания
+
+        // Обработчик события, вызываемый после завершения распознавания речи
+        recognition.onresult = function(event) {
+          const result = event.results[0][0].transcript; // Получаем распознанный текст
+
+          runCommand(result);
+          //alert(result); // Выводим распознанный текст в консоль
+        };
+
+        // Обработчик события, вызываемый при ошибке распознавания речи
+        recognition.onerror = function(event) {
+          alert(event.error); // Выводим ошибку в консоль
+        };
+
+        // Функция, которая запускает процесс распознавания речи
+        function startRecognition() {
+          recognition.start(); // Запуск распознавания речи
         }
     </script>
 </body>
