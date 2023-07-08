@@ -173,3 +173,20 @@ a {
 #microphone:hover {
     cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  /* Стили для экранов шириной до 767 пикселей (мобильные устройства) */
+  .block-to-hide {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Стили для экранов шириной от 768 пикселей (десктоп) */
+  .block-to-hide {
+    display: block;
+  }
+  .collapsed-block {
+    display: none;
+  }
+}
