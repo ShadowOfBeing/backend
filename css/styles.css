@@ -146,3 +146,16 @@ a {
     scrollbar-width: thin;
     scrollbar-color: rgba(256, 0, 0, 0.5);
 }
+
+/* voice */
+.startVoiceWrapper {
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startVoice {
+    font-size: 5vw;
+}
