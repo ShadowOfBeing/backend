@@ -37,27 +37,45 @@ function getLayout(category) {
     //if (category == 'main') {}
 }
 
-function runCommand(data) {
-    const hello = /привет/i
-    const random = /любой вопрос/i
-    if (hello.test(data)) {
-        alert('и тебе привет')
-    } else if (random.test(data)) {
+function getRandomQuestionFromCategory(category) {
+    // если нужно выбрать случайную категорию
+    if (category == 'random') {
         // Получаем массив всех ключей объекта answersAndQuestions
         const jobKeys = Object.keys(answersAndQuestions);
-
         // Выбираем случайный ключ из jobKeys
-        const randomJobKey = jobKeys[Math.floor(Math.random() * jobKeys.length)];
+        category = jobKeys[Math.floor(Math.random() * jobKeys.length)];
+    }
+    // Получаем массив всех вопросов из выбранного объекта
+    const questions = Object.values(answersAndQuestions[category]);
 
-        // Получаем массив всех вопросов из выбранного объекта
-        const questions = Object.values(answersAndQuestions[randomJobKey]);
+    // Получаем случайный индекс из массива questions
+    const randomIndex = Math.floor(Math.random() * questions.length);
 
-        // Получаем случайный индекс из массива questions
-        const randomIndex = Math.floor(Math.random() * questions.length);
+    // Получаем случайный вопрос
+    const result = questions[randomIndex].question;
 
-        // Получаем случайный вопрос
-        const randomQuestion = questions[randomIndex].question;
-        alert(randomQuestion)
+    alert(result)
+}
+
+function runCommand(data) {
+    const hello = /привет/i
+    const question = /вопрос/i
+    const random = /любой/i
+    const git = /гит/i
+    const python = /пайтон/i
+    if (hello.test(data)) {
+        alert('и тебе привет')
+    } else if (question.test(data)) {
+        // проверяем категорию вопроса
+        if (random.test(data)) {
+            getRandomQuestionFromCategory('random')
+        } else if (git.test(data)) {
+            getRandomQuestionFromCategory('git')
+        } else if (python.test(data)) {
+            getRandomQuestionFromCategory('python')
+        } else {
+            alert('не могу показать вопрос, потому что не распознал название категории')
+        }
     } else {
         alert('неизвестная команда')
     }
