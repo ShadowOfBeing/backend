@@ -33,9 +33,9 @@
 
 #microphone-mobile {
     position: absolute;
-    left: 150%;
+    left: 125%;
     top: 0%;
-    width: 12vw;
+    width: 22vw;
 }
 
 #microphone-mobile:hover {
@@ -80,4 +80,14 @@
 
 .mobile {
     font-size: 10vw;
+}
+
+.main-page-content-mobile {
+    width: 135vw;
+    height: 125vh;
+    overflow: auto;
+    border: 2px solid red;
+    padding: 2vw;
+    font-size: 10vw;
+    margin: 3vh 2.3vw auto;
 }

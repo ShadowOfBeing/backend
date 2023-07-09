@@ -5,6 +5,7 @@
     <title>Title</title>
     <link type="text/css" href="css/styles.css" rel="stylesheet" />
     <link type="text/css" href="css/mobile.css" rel="stylesheet" />
+    <script src="js/database.js"></script>
     <script src="js/scripts.js"></script>
 </head>
 <body>
@@ -35,7 +36,6 @@
             Список вопросов
         </div>
         <div class="questions-menu-mobile">
-            <div class="title-mobile">Каталог вопросов</div>
             <div class="questions-container-mobile"></div>
         </div>
         <div class="content-box-mobile">
@@ -58,7 +58,7 @@
             document.getElementsByClassName('content-box-mobile')[0].remove();
 
             // добавляем контент главной страницы
-            document.getElementsByClassName('main-container-mobile')[0].innerHTML += mainText;
+            document.getElementsByClassName('main-container-mobile')[0].innerHTML += `<div class="main-page-content-mobile">${mainText}</div>`;
         } else {
             // заполняем список вопросов
             getQuestionsList(category, 'mobile');
