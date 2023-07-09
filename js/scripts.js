@@ -81,10 +81,34 @@ function runCommand(data) {
         // проверяем категорию вопроса
         if (random.test(data)) {
             getRandomQuestionFromCategory('random')
-        } else if (git.test(data)) {
-            getRandomQuestionFromCategory('git')
+        } else if (work.test(data)) {
+            getRandomQuestionFromCategory('work')
+        } else if (other.test(data)) {
+            getRandomQuestionFromCategory('other')
         } else if (python.test(data)) {
             getRandomQuestionFromCategory('python')
+        } else if (databases.test(data)) {
+            getRandomQuestionFromCategory('databases')
+        } else if (oop.test(data)) {
+            getRandomQuestionFromCategory('oop')
+        } else if (async.test(data)) {
+            getRandomQuestionFromCategory('async')
+        } else if (tests.test(data)) {
+            getRandomQuestionFromCategory('tests')
+        } else if (django.test(data)) {
+            getRandomQuestionFromCategory('django')
+        } else if (git.test(data)) {
+            getRandomQuestionFromCategory('git')
+        } else if (docker.test(data)) {
+            getRandomQuestionFromCategory('docker')
+        } else if (algorithms.test(data)) {
+            getRandomQuestionFromCategory('algorithms')
+        } else if (linux.test(data)) {
+            getRandomQuestionFromCategory('linux')
+        } else if (drf.test(data)) {
+            getRandomQuestionFromCategory('drf')
+        } else if (brokers.test(data)) {
+            getRandomQuestionFromCategory('brokers')
         } else {
             alert('не могу показать вопрос, потому что не распознал название категории')
         }
