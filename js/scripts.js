@@ -61,8 +61,20 @@ function runCommand(data) {
     const hello = /привет/i
     const question = /вопрос/i
     const random = /любой/i
-    const git = /гит/i
+    const work = /работа/i
+    const other = /общее/i
     const python = /пайтон/i
+    const databases = /базы данных/i
+    const oop = /ооп/i
+    const async = /асинхронность/i
+    const tests = /тестирование/i
+    const django = /джанго/i
+    const git = /гит/i
+    const docker = /докер/i
+    const algorithms = /алгоритмы/i
+    const linux = /линукс/i
+    const drf = /дрф/i
+    const brokers = /брокеры/i
     if (hello.test(data)) {
         alert('и тебе привет')
     } else if (question.test(data)) {
