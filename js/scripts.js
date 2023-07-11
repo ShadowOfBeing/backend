@@ -60,17 +60,17 @@ function runCommand(data) {
     const random = /любой/i
     const work = /работа/i
     const other = /общее/i
-    const python = /пайтон/i
+    const python = /(пайтон|питон)/i
     const databases = /базы данных/i
     const oop = /ооп/i
-    const async = /асинхронность/i
-    const tests = /тестирование/i
+    const async = /синхронност/i
+    const tests = /тестирован/i
     const django = /джанго/i
-    const git = /гит/i
+    const git = /ги(т|д)/i
     const docker = /докер/i
     const algorithms = /алгоритмы/i
-    const linux = /линукс/i
-    const drf = /дрф/i
+    const linux = /линукс/i //
+    const drf = /(дрф|дф|d рф|др рф)/i
     const brokers = /брокеры/i
     if (hello.test(data)) {
         alert('и тебе привет')

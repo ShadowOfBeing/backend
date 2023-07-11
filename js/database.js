@@ -425,9 +425,20 @@ answersAndQuestions = {
         3: {'question': 'git question 3', 'answer': 'git answer 3'},
     },
     'docker': {
-        1: {'question': 'docker question 1', 'answer': 'docker answer 1'},
-        2: {'question': 'docker question 2', 'answer': 'docker answer 2'},
-        3: {'question': 'docker question 3', 'answer': 'docker answer 3'},
+        1: {'question': `Что такое Docker и Docker Compose? Зачем они нужны?`,
+            'answer': `answer docker 1`},
+        2: {'question': `В чём разница при написании Dockerfile в двух этим примерах?<br>
+                         1) RUN apk add --no-cache git gcc g++ libffi-dev musl-dev postgresql-client postgresql-dev
+                         zlib-dev pcre pcre-dev build-base && pip install --no-cache-dir -r requirements.txt && apk del
+                         git gcc g++ libffi-dev musl-dev postgresql-dev zlib-dev pcre-dev build-base<br>
+                         2) RUN apk add --no-cache git gcc g++ libffi-dev musl-dev postgresql-client postgresql-dev
+                         zlib-dev pcre pcre-dev build-base RUN pip install --no-cache-dir -r requirements.txt
+                         RUN apk del git gcc g++ libffi-dev musl-dev postgresql-dev zlib-dev pcre-dev build-base`,
+             'answer': `Первый Dockerfile выполняет установку требуемых зависимостей с помощью команды RUN одним сложным
+                        шагом. Это делается для оптимизации работы Docker, чтобы уменьшить количество слоев образа и
+                        уменьшить их размер. Второй Dockerfile разбивает установку на несколько шагов, каждый из которых
+                        создает свой слой Docker. Это делается для упрощения сборки и отладки Docker-образа, так как
+                        каждый слой Docker может быть переиспользован при последующих сборках.`},
     },
     'drf': {
         1: {'question': 'Что такое сериализаторы в DRF?', 'answer': 'drf answer 1'},

@@ -55,8 +55,8 @@
 }
 
 .answer-and-question-mobile {
-    height: 88.7vh;
-    width: 145vw;
+    height: 129vh;
+    width: 138vw;
     margin-left: 1.3vw;
     margin-right: 1.3vw;
 }
@@ -72,7 +72,7 @@
 
 .answer-mobile {
     font-size: 10vw;
-    height: 105vh;
+    height: 90vh;
     overflow: auto;
     border: 2px solid red;
     padding: 2vw;
@@ -84,7 +84,7 @@
 
 .main-page-content-mobile {
     width: 135vw;
-    height: 125vh;
+    height: 123vh;
     overflow: auto;
     border: 2px solid red;
     padding: 2vw;

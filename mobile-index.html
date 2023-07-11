@@ -87,7 +87,7 @@
           const result = event.results[0][0].transcript; // Получаем распознанный текст
 
           runCommand(result);
-          //alert(result); // Выводим распознанный текст в консоль
+          console.log(result); // Выводим распознанный текст в консоль
         };
 
         // Обработчик события, вызываемый при ошибке распознавания речи
@@ -98,6 +98,7 @@
         // Функция, которая запускает процесс распознавания речи
         function startRecognition() {
           recognition.start(); // Запуск распознавания речи
+          event.stopPropagation();
         }
     </script>
 </body>
