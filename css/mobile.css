@@ -17,6 +17,7 @@
     top: 7%;
     left: 7%;
     z-index: 100;
+    background-color: white;
 }
 
 .active {
@@ -49,9 +50,10 @@
     margin-left: 1vw;
 }
 
-.questions-container-mobile {
-    border: 2px solid red;
+.questions-menu-mobile {
+    border: 4px solid red;
     overflow: auto;
+    max-height: 120vh;
 }
 
 .answer-and-question-mobile {
@@ -62,7 +64,7 @@
 }
 
 .question-mobile {
-    font-size: 10vw;
+    font-size: 7vw;
     margin-bottom: 3vh;
     height: 12vh;
     overflow: auto;
@@ -71,7 +73,7 @@
 }
 
 .answer-mobile {
-    font-size: 10vw;
+    font-size: 7vw;
     height: 90vh;
     overflow: auto;
     border: 2px solid red;
@@ -79,7 +81,17 @@
 }
 
 .mobile {
-    font-size: 10vw;
+    font-size: 7vw;
+    border-bottom: 4px solid red;
+}
+
+.mobile-category-menu {
+    font-size: 9vw;
+}
+/* продублировал из styles.css так как этот файл подключается позже */
+.last-question {
+    margin-bottom: 0;
+    border-bottom: 1px solid white;
 }
 
 .main-page-content-mobile {
