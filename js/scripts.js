@@ -59,7 +59,7 @@ function runCommand(data) {
     const random = /любой/i
     const work = /работа/i
     const other = /общее/i
-    const python = /(пайтон|питон)/i
+    const python = /(пайтон|питон|пайтн|пайтим)/i
     const databases = /базы данных/i
     const oop = /ооп/i
     const async = /синхронност/i
@@ -68,7 +68,7 @@ function runCommand(data) {
     const git = /ги(т|д)/i
     const docker = /докер/i
     const algorithms = /алгоритмы/i
-    const linux = /линукс/i //
+    const linux = /(линукс|линкс)/i
     const drf = /(дрф|дф|d рф|др рф)/i
     const brokers = /брокеры/i
     if (question.test(data)) {
