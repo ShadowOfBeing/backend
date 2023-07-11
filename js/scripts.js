@@ -55,7 +55,6 @@ function getRandomQuestionFromCategory(category) {
 }
 
 function runCommand(data) {
-    const hello = /привет/i
     const question = /вопрос/i
     const random = /любой/i
     const work = /работа/i
@@ -72,9 +71,7 @@ function runCommand(data) {
     const linux = /линукс/i //
     const drf = /(дрф|дф|d рф|др рф)/i
     const brokers = /брокеры/i
-    if (hello.test(data)) {
-        alert('и тебе привет')
-    } else if (question.test(data)) {
+    if (question.test(data)) {
         // проверяем категорию вопроса
         if (random.test(data)) {
             getRandomQuestionFromCategory('random')
