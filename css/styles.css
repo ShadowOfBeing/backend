@@ -51,10 +51,12 @@
     margin-bottom: 3vh;
     height: 12vh;
     overflow: hidden;
+    font-size: 1.4vw;
 }
 
 .answer {
     max-height: 58.7vh;
+    font-size: 1.4vw;
 }
 
 .main-title {

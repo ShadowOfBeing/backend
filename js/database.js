@@ -313,7 +313,7 @@ answersAndQuestions = {
                        `},
         7: {'question': 'Как проверить, что элемент является экземпляром класса в Python?',
             'answer': 'isinstance(my_element, TargetClass)'},
-        8: {'question': 'Какие стандартные методы есть у классов в Python?',
+        8: {'question': 'Какие магические методы есть у классов в Python?',
             'answer': `1) __init__<br>
                        2) __str__<br>
                        3) __getattr__(self, name) в Python - это метод специального имени (special method), который
@@ -327,6 +327,73 @@ answersAndQuestions = {
                        &nbsp;&nbsp;&nbsp;&nbsp;for attr in dir(self):<br>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not callable(getattr(self, attr)) and not attr.startswith("__"):<br>
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setattr(self, attr, None)`},
+        10: {'question': 'Что такое "магические методы" в классах Python?',
+             'answer': 'oop answer 11'},
+        11: {'question': 'Какие типы методов есть в классах Python?',
+             'answer': `В классах Python есть 3 типа методов. Например:<br>
+                        class MyClass:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;GLOBAL_ARG = 100<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, x, y):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = x<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = y<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;def first_method(self, arg1, arg2):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(arg1 * x + arg2 * y)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = arg1<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = arg2<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;@classmethod<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;def second_method(cls, arg):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(cls.GLOBAL_ARG * arg)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cls.GLOBAL_ARG = arg<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;@staticmethod<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;def third_method(arg1, arg2):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(arg1 * arg2)<br><br>
+
+                        1) first_method - это тип метода по умолчанию, который принимает в качестве обязательного
+                        аргумента экземпляр класса через ключевое слово self (в неявном виде) и лишь через него
+                        происходит обращение к методу. В таком методе мы можем обращаться к свойствам экземпляра класса.<br>
+                        - my_instance = MyClass(1, 2)<br>
+                        &nbsp;&nbsp;my_instance.first_method(3, 4) или MyClass(my_instance).first_method(3, 4), что
+                        эквивалентно друг другу.<br> В данном примере выполнится код print(1 * 3 + 2 * 4) и в консоль
+                        будет выведено число 11, а затем мы изменяем свойства созданного класса x и y на переданные в
+                        метод два аргумента.<br><br>
+                        2) second_method - тип метода самого класса, где не требуется иметь готовый экземпляр класса
+                        для обращения к методу, обращение к методу идёт через обращение к самому классу. Данный тип
+                        метода объявляется через декоратор @classmethod. Принимает обязательный аргумент - сам класс
+                        через ключевое слово cls (в неявном виде). В таком методе мы можем обращаться к свойствам самого
+                        класса, которые являются общими для всех экземпляров класса:<br>
+                        - MyClass.second_method(5)<br>
+                        В данном примере выполнится код print(100 * 5) и в консоль будет выведено число 500, а затем мы
+                        изменяем общее свойство нашего класса GLOBAL_ARG на переданный в метод аргумент.<br><br>
+                        3) third_method - статический тип метода, который не имеет обязательных аргументов. Данный тип
+                        метода объявляется через декоратор @staticmethod. По сути является полным аналогом обычной функции,
+                        только упакованной в класс для удобства, например для объединения функций по тематикам класса.
+                        Может иметь доступ к экземпляру класса или объекту самого класса, если их передать в него в виде
+                        опциональных аргументов (если заранее их объявили в методе).<br>
+                        - MyClass.third_method(7, 8)<br>
+                        В данном примере выполнится код print(7 * 8) и в консоль будет выведено число 56.<br>
+                        Метод не умеет по умолчанию принимать экземпляр класса или объект самого класса, но их можно
+                        передать явно (объявив заранее в методе как обычные аргументы) и точно так же взаимодействовать
+                        с ними, изменять их. Например можно реализовать статический метод, который явно принимает
+                        экземпляр класса и объект класса (остальной код класса как в первом примере):<br>
+                        @staticmethod<br>
+                        def third_method(arg1, arg2, arg3, cls_arg, self_arg):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print(arg1, arg2, self_arg.x, self_arg.y, cls_arg.GLOBAL_ARG)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;self_arg.x = arg1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;self_arg.y = arg2<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;cls_arg.GLOBAL_ARG = arg3<br>
+                        <br>
+                        my_instance = MyClass(1, 2)<br>
+                        MyClass.third_method(9, 3, MyClass, my_instance)<br>
+                        <br>
+                        В данном примере мы создали экземпляр класса, затем вызвали статический метод и явно передали в
+                        него экземпляр класса и объект самого класса  и ещё три числа. В результате выполнился код
+                        print(9, 3, 1, 2, 100), а далее мы присвоили свойствам экземпляра класса и глобальному свойству
+                        класса значения переданных числовых аргументов.
+                        `},
     },
     'django': {
         1: {'question': 'Что нового в версиях Django 2.x/3.x/4.x?',
