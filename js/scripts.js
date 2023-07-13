@@ -62,7 +62,7 @@ function runCommand(data) {
     const question = /вопрос/i
     const random = /любой/i
     const work = /работа/i
-    const other = /общее/i
+    const other = /(общее|общие|общии|общеи)/i
     const python = /(пайтон|питон|пайтн|пайтим)/i
     const databases = /базы данных/i
     const oop = /ооп/i
@@ -109,7 +109,6 @@ function runCommand(data) {
             getRandomQuestionFromCategory('brokers')
         } else {
             alert('не могу показать вопрос, потому что не распознал название категории')
-            alert(data)
         }
     } else {
         alert('неизвестная команда')
