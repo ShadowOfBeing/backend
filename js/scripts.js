@@ -6,12 +6,16 @@ function getAnswer(category, answerID, option) {
 
     question.innerHTML = answersAndQuestions[category][answerID]['question']
     answer.innerHTML = answersAndQuestions[category][answerID]['answer']
-    prevSelectQ.classList.remove('select-question')
+    if (prevSelectQ) {
+        prevSelectQ.classList.remove('select-question')
+    }
 
     questionInMenu.classList.add('select-question')
     sessionStorage.setItem('prevSelectQuestion', 'question ' + answerID)
 
-    document.getElementsByClassName('questions-menu-mobile')[0].classList.remove('active')
+    if (option && option == 'mobile') {
+        document.getElementsByClassName('questions-menu-mobile')[0].classList.remove('active')
+    }
 }
 
 function getQuestionsList(category, option) {
