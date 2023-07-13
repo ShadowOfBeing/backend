@@ -109,6 +109,7 @@ function runCommand(data) {
             getRandomQuestionFromCategory('brokers')
         } else {
             alert('не могу показать вопрос, потому что не распознал название категории')
+            alert(data)
         }
     } else {
         alert('неизвестная команда')
