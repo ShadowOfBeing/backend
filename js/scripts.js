@@ -62,7 +62,7 @@ function runCommand(data) {
     const question = /вопрос/i
     const random = /любой/i
     const work = /работа/i
-    const other = /(общее|общие|общии|общеи)/i
+    const other = /(общ(и|е)(е|и|й))/i
     const python = /(пайтон|питон|пайтн|пайтим)/i
     const databases = /базы данных/i
     const oop = /ооп/i
