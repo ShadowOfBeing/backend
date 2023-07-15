@@ -65,7 +65,7 @@ function runCommand(data) {
     const other = /(общ(и|е)(е|и|й))/i
     const python = /(пайтон|питон|пайтн|пайтим)/i
     const databases = /базы данных/i
-    const oop = /ооп/i
+    const oop = /(ооп|оп.|о п.|о пп.|о бп.)/i
     const async = /синхронност/i
     const tests = /тестирован/i
     const django = /джанго/i
