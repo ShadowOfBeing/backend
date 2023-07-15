@@ -123,3 +123,14 @@ function openCategoryMenu() {
 function openQuestionsMenu() {
     document.getElementsByClassName('questions-menu-mobile')[0].classList.toggle('active')
 }
+
+function fillCounters() {
+    for (var key in answersAndQuestions) {
+      if (answersAndQuestions.hasOwnProperty(key)) {
+        if (key != 'main') {
+          var count = Object.keys(answersAndQuestions[key]).length;
+          document.getElementsByClassName(`${key}`)[0].children[0].textContent = count
+        }
+      }
+    }
+}

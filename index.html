@@ -15,21 +15,21 @@
                 <img id="microphone" src="./img/microphone.png" alt="microphone" onclick="startRecognition()">
             </div>
             <div class="main-title main" onclick="getLayout('main')">Главная</div>
-            <div class="main-title work" onclick="getLayout('work')">О работе</div>
-            <div class="main-title other" onclick="getLayout('other')">Общее</div>
-            <div class="main-title python" onclick="getLayout('python')">Python</div>
-            <div class="main-title databases" onclick="getLayout('databases')">Базы данных, SQL</div>
-            <div class="main-title oop" onclick="getLayout('oop')">ООП</div>
-            <div class="main-title async" onclick="getLayout('async')">Асинхронность</div>
-            <div class="main-title review" onclick="getLayout('review')">Code Review</div>
-            <div class="main-title tests" onclick="getLayout('tests')">Тестирование</div>
-            <div class="main-title django" onclick="getLayout('django')">Django</div>
-            <div class="main-title git" onclick="getLayout('git')">Git</div>
-            <div class="main-title docker" onclick="getLayout('docker')">Docker</div>
-            <div class="main-title algorithms" onclick="getLayout('algorithms')">Алгоритмы</div>
-            <div class="main-title linux" onclick="getLayout('linux')">Linux</div>
-            <div class="main-title drf" onclick="getLayout('drf')">DRF</div>
-            <div class="main-title brokers" onclick="getLayout('brokers')">Брокеры сообщений</div>
+            <div class="main-title work" onclick="getLayout('work')"><div class="counter"></div>О работе</div>
+            <div class="main-title other" onclick="getLayout('other')"><div class="counter"></div>Общее</div>
+            <div class="main-title python" onclick="getLayout('python')"><div class="counter"></div>Python</div>
+            <div class="main-title databases" onclick="getLayout('databases')"><div class="counter"></div>Базы данных, SQL</div>
+            <div class="main-title oop" onclick="getLayout('oop')"><div class="counter"></div>ООП</div>
+            <div class="main-title async" onclick="getLayout('async')"><div class="counter"></div>Асинхронность</div>
+            <div class="main-title review" onclick="getLayout('review')"><div class="counter"></div>Code Review</div>
+            <div class="main-title tests" onclick="getLayout('tests')"><div class="counter"></div>Тестирование</div>
+            <div class="main-title django" onclick="getLayout('django')"><div class="counter"></div>Django</div>
+            <div class="main-title git" onclick="getLayout('git')"><div class="counter"></div>Git</div>
+            <div class="main-title docker" onclick="getLayout('docker')"><div class="counter"></div>Docker</div>
+            <div class="main-title algorithms" onclick="getLayout('algorithms')"><div class="counter"></div>Алгоритмы</div>
+            <div class="main-title linux" onclick="getLayout('linux')"><div class="counter"></div>Linux</div>
+            <div class="main-title drf" onclick="getLayout('drf')"><div class="counter"></div>DRF</div>
+            <div class="main-title brokers" onclick="getLayout('brokers')"><div class="counter"></div>Брокеры сообщений</div>
         </div>
         <div class="content-box">
             <div class="questions-menu">
@@ -75,6 +75,8 @@
             // заполняем первый вопрос и ответ
             getAnswer(category, 1);
         }
+        // заполняем счётчики количества вопросов в каждой категории
+        fillCounters();
 
         // ГОЛОСОВЫЕ КОМАНДЫ
         const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;

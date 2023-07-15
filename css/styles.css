@@ -60,6 +60,7 @@
 }
 
 .main-title {
+    position: relative;
     font-size: 2.5vh;
     width: 90%;
     border: 2px solid red;
@@ -67,6 +68,25 @@
     padding: 8px;
     transition: 0.2s;
     background-color: white;
+}
+
+.counter {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 90%;
+    display: block;
+    height: 100%;
+    width: 10%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    line-height: 170%;
+}
+
+.circle:hover {
+    background-color: white;
+    color: red;
 }
 
 .title {
