@@ -1,3 +1,8 @@
+/*
+<4s> - кастомный тег для обозначения отступа в 4 пробела, в функции getAnswer() заменяется на &nbsp;&nbsp;&nbsp;&nbsp;
+что создаёт на в тексте отступ в 4 пробела. Сделан, чтобы каждый раз не прописывать &nbsp;&nbsp;&nbsp;&nbsp;
+*/
+
 answersAndQuestions = {
     'work': {
         1: {'question': 'Расскажите о себе', 'answer': 'Кратко описываем свои последние места работы и стек'},
@@ -121,14 +126,14 @@ answersAndQuestions = {
                        <br>
                        @sync_and_async_middleware<br>
                        def simple_middleware(get_response):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;if asyncio.iscoroutinefunction(get_response):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;async def middleware(request):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = await get_response(request)<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return response<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def middleware(request):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = get_response(request)<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return response<br>
+                       <4s>if asyncio.iscoroutinefunction(get_response):<br>
+                       <4s><4s>async def middleware(request):<br>
+                       <4s><4s><4s>response = await get_response(request)<br>
+                       <4s><4s><4s>return response<br>
+                       <4s>else:<br>
+                       <4s><4s>def middleware(request):<br>
+                       <4s><4s><4s>response = get_response(request)<br>
+                       <4s><4s><4s>return response<br>
                        <br>
                        Модуль django.utils.decorators содержит декораторы sync_only_middleware(), async_only_middleware()
                        и sync_and_async_middleware(), которые позволяют применять эти флаги к нашим функциям и указывать
@@ -245,14 +250,14 @@ answersAndQuestions = {
         7: {'question': 'Как развернуть связный список (linked list)?', 'answer': 'algorithms answer 6'},
         8: {'question': 'Как развернуть словарь в Python?',
             'answer': `def reverse_dict(my_dict):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;current_node = my_dict<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;new_pointer = None<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;while current_node:<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;old_pointer = current_node['next']<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current_node['next'] = new_pointer<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_pointer = current_node<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current_node = old_pointer<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;return new_pointer`},
+                       <4s>current_node = my_dict<br>
+                       <4s>new_pointer = None<br>
+                       <4s>while current_node:<br>
+                       <4s><4s>old_pointer = current_node['next']<br>
+                       <4s><4s>current_node['next'] = new_pointer<br>
+                       <4s><4s>new_pointer = current_node<br>
+                       <4s><4s>current_node = old_pointer<br>
+                       <4s>return new_pointer`},
     },
     'tests': {
         1: {'question': 'Какой процент кода нужно покрывать тестами?',
@@ -274,28 +279,32 @@ answersAndQuestions = {
             'answer': `answer 6`},
     },
     'oop': {
-        1: {'question': 'Что такое SOLID?', 'answer': 'oop answer 1'},
-        2: {'question': 'Какие основные концепции ООП? Опишите их.', 'answer': 'oop answer 2'},
-        3: {'question': 'Что такое ромбовидное наследование?',
+        1: {'question': 'Ссылки на материалы для изучения',
+            'answer': `1) <a href="https://youtube.com/playlist?list=PLA0M1Bcd0w8zPwP7t-FgwONhZOHt9rz9E" target="_blank">Курс по ООП</a> от Сергея Балакирева<br>
+                       2) Подробное объяснение <a href="https://youtu.be/TxZwqVTaCmA" target="_blank">концепций SOLID</a><br>
+                       3) Подробное объяснение <a href="https://youtu.be/-6DWwR_R4Xk" target="_blank">концепций ООП</a>`},
+        2: {'question': 'Что такое SOLID?', 'answer': 'oop answer 1'},
+        3: {'question': 'Какие основные концепции ООП? Опишите их.', 'answer': 'oop answer 2'},
+        4: {'question': 'Что такое ромбовидное наследование?',
             'answer': `Ромбовидное наследование (diamond inheritance) - это специфика множественного наследования,
                        которая возникает, когда один класс наследуется от двух классов через промежуточный класс,
                        которые оба наследуют от одного и того же базового класса. Это создает структуру наследования в
                        форме ромба, где базовый класс расположен на вершине ромба, а наследующие классы - на боковых
                        сторонах.`},
-        4: {'question': 'Что такое абстрактный класс?',
+        5: {'question': 'Что такое абстрактный класс?',
             'answer': `Абстрактный класс похож на интерфейс, но в отличии от интерфейса в абстрактном классе у методов
                        можно прописать реализацию. В Python в ядре языка нет реализации абстрактных классов,
                        однако с версии языка 2.6 в стандартную библиотеку добавлен модуль abc и абстрактный класс
                        можно создать путем наследования от класса abc.ABC из модуля abc и объявления абстрактных
                        методов с помощью декоратора @abstractmethod и абстрактных свойств с помощью декоратора
                        @abstractproperty.`},
-        5: {'question': 'Что такое интерфейс?',
+        6: {'question': 'Что такое интерфейс?',
             'answer': `Интерфейс хранит описание методов с их параметрами без реализации, т.е. интерфейс не является
                        классом и для него нельзя создать объект. В Python нет интерфейсов, но есть концепция
                        "duck typing", которая позволяет проверять объекты на наличие нужных атрибутов и методов вместо
                        проверки типов данных. Это означает, что классы могут использоваться как интерфейсы, если они
                        предоставляют необходимый функционал.`},
-        6: {'question': 'Как в Python указать модификатор private?',
+        7: {'question': 'Как в Python указать модификатор private?',
             'answer': `В Python нет такого модификатора доступа, как private, как, например, в Java или C#. Вместо
                        этого в Python используется соглашение об именовании, которое гласит о том, что имя атрибута или
                        метода, начинающееся с одного символа подчеркивания, относится к категории protected и к нему можно
@@ -322,32 +331,33 @@ answersAndQuestions = {
                        @<атрибут>.deleter - в качестве deleter<br>
                        С помощью этого механизма можно реализовать логику "private" доступа к атрибутам. Это позволит
                        скрыть от пользователя некоторые свойства и методы. Однако, такой функционал не будет полностью
-                       защищен от доступа за пределами класса, это скорее инструмент для упрощения использования класса,
-                       но без строгого контроля доступа.
+                       защищен от доступа за пределами класса (получить свойство и присвоить ему значение можно через
+                       метод __dict__[name] = value), это скорее инструмент для упрощения использования класса, но без
+                       строгого контроля доступа.
                        <br><br>
                        Пример реализации:<br>
                        class MyClass:<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, val):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._val = val<br>
+                       <4s>def __init__(self, val):<br>
+                       <4s><4s>self._val = val<br>
                        <br><br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;@property<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;def val(self):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Getting val")<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self._val<br>
+                       <4s>@property<br>
+                       <4s>def val(self):<br>
+                       <4s><4s>print("Getting val")<br>
+                       <4s><4s>return self._val<br>
                        <br><br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;@val.setter<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;def val(self, value):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Setting val")<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._val = value<br>
+                       <4s>@val.setter<br>
+                       <4s>def val(self, value):<br>
+                       <4s><4s>print("Setting val")<br>
+                       <4s><4s>self._val = value<br>
                        <br><br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;@val.deleter<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;def val(self):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Deleting val")<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;del self._val<br>
+                       <4s>@val.deleter<br>
+                       <4s>def val(self):<br>
+                       <4s><4s>print("Deleting val")<br>
+                       <4s><4s>del self._val<br>
                        `},
-        7: {'question': 'Как проверить, что элемент является экземпляром класса в Python?',
+        8: {'question': 'Как проверить, что элемент является экземпляром класса в Python?',
             'answer': 'isinstance(my_element, TargetClass)'},
-        8: {'question': 'Какие магические методы есть у классов в Python?',
+        9: {'question': 'Какие магические методы есть у классов в Python?',
             'answer': `1) __new__<br>
                        2) __init__<br>
                        3) __del__<br>
@@ -356,39 +366,43 @@ answersAndQuestions = {
                        6) __getattr__(self, name) в Python - это метод специального имени (special method), который
                        вызывается в случае, если атрибут, на который происходит обращение, отсутствует в экземпляре
                        класса. Если определить в классе метод __getattr__(name), то при попытке обратиться к
-                       несуществующему атрибуту будет вызван именно этот метод.`},
-        9: {'question': 'Как получить все свойства класса в Python?',
+                       несуществующему атрибуту будет вызван именно этот метод.<br>
+                       7) __setattr__(self, key, value) - автоматически вызывается при изменении свойства key класса<br>
+                       8) __delattr__(self, item) - автоматически вызывается при удалении свойства item (не важно существует оно или нет)<br>
+                       9) __getattribute__(self, item) - автоматически вызывается при получении свойства класса с именем item<br>
+                       10) __dict__`},
+        10: {'question': 'Как получить все свойства класса в Python?',
             'answer': `Можно использовать функцию dir(), которая вернёт все свойства и методы класса, а затем
                        исключить методы. Например, так можно реализовать метод, обнуляющий все свойства в классе:<br>
                        def reset(self):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;for attr in dir(self):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not callable(getattr(self, attr)) and not attr.startswith("__"):<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setattr(self, attr, None)`},
-        10: {'question': 'Что такое "магические методы" в классах Python?',
+                       <4s>for attr in dir(self):<br>
+                       <4s><4s>if not callable(getattr(self, attr)) and not attr.startswith("__"):<br>
+                       <4s><4s><4s>setattr(self, attr, None)`},
+        11: {'question': 'Что такое "магические методы" в классах Python?',
              'answer': `Это методы по умолчанию, которые есть у любого класса при его создании, имена таких методов
                         начинаются и заканчиваются двойным нижним подчёркивание.`},
-        11: {'question': 'Какие типы методов есть в классах Python?',
+        12: {'question': 'Какие типы методов есть в классах Python?',
              'answer': `В классах Python есть 3 типа методов. Например:<br>
                         class MyClass:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;GLOBAL_ARG = 100<br><br>
+                            <4s>GLOBAL_ARG = 100<br><br>
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, x, y):<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = x<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = y<br><br>
+                            <4s>def __init__(self, x, y):<br>
+                                <4s><4s>self.x = x<br>
+                                <4s><4s>self.y = y<br><br>
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;def first_method(self, arg1, arg2):<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(arg1 * x + arg2 * y)<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = arg1<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = arg2<br><br>
+                            <4s>def first_method(self, arg1, arg2):<br>
+                                <4s><4s>print(arg1 * x + arg2 * y)<br>
+                                <4s><4s>self.x = arg1<br>
+                                <4s><4s>self.y = arg2<br><br>
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;@classmethod<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;def second_method(cls, arg):<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(cls.GLOBAL_ARG * arg)<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cls.GLOBAL_ARG = arg<br><br>
+                            <4s>@classmethod<br>
+                            <4s>def second_method(cls, arg):<br>
+                                <4s><4s>print(cls.GLOBAL_ARG * arg)<br>
+                                <4s><4s>cls.GLOBAL_ARG = arg<br><br>
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;@staticmethod<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;def third_method(arg1, arg2):<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(arg1 * arg2)<br><br>
+                            <4s>@staticmethod<br>
+                            <4s>def third_method(arg1, arg2):<br>
+                                <4s><4s>print(arg1 * arg2)<br><br>
 
                         1) first_method - это тип метода по умолчанию, который принимает в качестве обязательного
                         аргумента экземпляр класса через ключевое слово self (в неявном виде) и лишь через него
@@ -419,10 +433,10 @@ answersAndQuestions = {
                         экземпляр класса и объект класса (остальной код класса как в первом примере):<br>
                         @staticmethod<br>
                         def third_method(arg1, arg2, arg3, cls_arg, self_arg):<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;print(arg1, arg2, self_arg.x, self_arg.y, cls_arg.GLOBAL_ARG)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;self_arg.x = arg1<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;self_arg.y = arg2<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;cls_arg.GLOBAL_ARG = arg3<br>
+                            <4s>print(arg1, arg2, self_arg.x, self_arg.y, cls_arg.GLOBAL_ARG)<br>
+                            <4s>self_arg.x = arg1<br>
+                            <4s>self_arg.y = arg2<br>
+                            <4s>cls_arg.GLOBAL_ARG = arg3<br>
                         <br>
                         my_instance = MyClass(1, 2)<br>
                         MyClass.third_method(9, 3, MyClass, my_instance)<br>
@@ -432,9 +446,9 @@ answersAndQuestions = {
                         print(9, 3, 1, 2, 100), а далее мы присвоили свойствам экземпляра класса и глобальному свойству
                         класса значения переданных числовых аргументов.
                         `},
-        12: {'question': 'Что такое атрибуты класса в Python?',
+        13: {'question': 'Что такое атрибуты класса в Python?',
              'answer': 'Атрибутами класса называют свойства (переменные) и методы (функции) класса.'},
-        13: {'question': 'Как получить все атрибуты класса в Python?',
+        14: {'question': 'Как получить все атрибуты класса в Python?',
              'answer': `Можно использовать функцию dir(), которая в качестве аргумента принимает экземпляр класса и
                         возвращает всего его методы и свойства`},
     },
@@ -497,9 +511,9 @@ answersAndQuestions = {
                        a = MyModel.objects.all()<br>
                        2) Сколько запросов к базе данных будет выполнено в этой функции?<br>
                        def test():<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;MyModel.object.filter(type="a")<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;MyModel.object.filter(type="b")<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;c = MyModel.object.filter(type="c")<br>
+                       <4s>MyModel.object.filter(type="a")<br>
+                       <4s>MyModel.object.filter(type="b")<br>
+                       <4s>c = MyModel.object.filter(type="c")<br>
                        <br>
                        На оба вопроса правильный ответ - ноль, так как мы лишь описали запросы к базе данных, выполнятся
                        они лишь когда мы обратимся к тем переменным, в которые их записали.`},
@@ -581,7 +595,7 @@ answersAndQuestions = {
                        router.register(r'employees', EmployeeViewSet)<br>
                        <br>
                        urlpatterns = [<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;path('', include(router.urls)),<br>
+                       <4s>path('', include(router.urls)),<br>
                        ]`},
         3: {'question': 'Как сделать разграничение прав для API метода в DRF?',
             'answer':
@@ -630,7 +644,31 @@ answersAndQuestions = {
         7: {'question': 'Какие существуют инструменты для оптимизации кода в Django проектах?',
             'answer': `cProfile - это модуль Python, который позволяет профилировать код на уровне функций и строк кода.<br><br>
                        line_profiler - это модуль для профилирования производительности на уровне строк кода.<br><br>
-                       Django Debug Toolbar - это инструмент для отслеживания производительности Django-приложений.`},
+                       Django Debug Toolbar - это инструмент для отслеживания производительности Django-приложений.<br><br>
+                       ISort - это утилита / библиотека на Python для сортировки импортируемых модулей в алфавитном
+                       порядке, автоматического разделения их на секции, а также группировки по типу.`},
+        8: {'question': 'Какие паттерны программирования вы знаете?',
+            'answer': `1) Декоратор - паттерн присущий языку Python<br>
+                       2) Singleton - в некоторых языках есть из коробки, но в Python его можно реализовать самостоятельно:<br>
+                       class Singleton:<br>
+                       <4s>__instance = None<br>
+                       <br>
+                       <4s>def __new__(cls):<br>
+                       <4s><4s>if cls.__instance is None:<br>
+                       <4s><4s><4s>cls.__instance = object.__new__(cls)<br>
+                       <4s><4s>return cls.__instance<br>
+                       3) Наследование<br>
+                       4) Моносостояние - реализация общего пространства имён для экземпляров класса.
+                       Пример реализации на Python:<br>
+                       class ThreadData:<br>
+                       <4s>__shared_attrs__ = {<br>
+                       <4s><4s>'name': 'thread_1',<br>
+                       <4s><4s>'data': {},<br>
+                       <4s><4s>'id': 1<br>
+                       <4s>}<br>
+                       <br>
+                       <4s>def __init__(self):<br>
+                       <4s><4s>self.__dict__ = self.__shared_attrs`},
     },
     'linux': {
         1: {'question': 'Какие основные команды есть в Linux?', 'answer': 'linux answer 1'},
@@ -640,7 +678,20 @@ answersAndQuestions = {
         3: {'question': 'Как посмотреть все процессы?', 'answer': 'linux answer 3'},
     },
     'review': {
-        1: {'question': 'первый пример', 'answer': 'ревью первого примера'},
+        1: {'question': `Проведите ревью кода<br><br>
+                         class MyClass:<br>
+                         <4s>def __init__(self, x, y):<br>
+                         <4s><4s>self.x = x<br>
+                         <4s><4s>self.y = y<br>
+                         <br>
+                         <4s>def __setattr__(self, key, value):<br>
+                         <4s><4s>if key == x:<br>
+                         <4s><4s><4s>raise AttributeError("недопустимое имя атрибута")<br>
+                         <4s><4s>else:<br>
+                         <4s><4s><4s>self.key = value<br>`,
+            'answer': `В __setattr__ в случае else мы попадаем в рекурсию, так как будем каждый раз вызывать __setattr__.
+                       Чтобы этого избежать нужно заменить строчку self.key = value на object.__setattr__(self, key, value)
+                       (так же есть вариант self.__dict__[key] = value)`},
         2: {'question': 'второй пример', 'answer': 'ревью второго примера'},
     },
 }

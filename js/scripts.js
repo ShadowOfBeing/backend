@@ -4,8 +4,8 @@ function getAnswer(category, answerID, option) {
     var questionInMenu = document.getElementById('question ' + answerID)
     var prevSelectQ = document.getElementById(sessionStorage.getItem('prevSelectQuestion') || 'question 1')
 
-    question.innerHTML = answersAndQuestions[category][answerID]['question']
-    answer.innerHTML = answersAndQuestions[category][answerID]['answer']
+    question.innerHTML = answersAndQuestions[category][answerID]['question'].replaceAll('<4s>', '&nbsp;&nbsp;&nbsp;&nbsp;')
+    answer.innerHTML = answersAndQuestions[category][answerID]['answer'].replaceAll('<4s>', '&nbsp;&nbsp;&nbsp;&nbsp;')
     if (prevSelectQ) {
         prevSelectQ.classList.remove('select-question')
     }
@@ -22,10 +22,11 @@ function getQuestionsList(category, option) {
     var questionsContainer = option ? document.getElementsByClassName('questions-container-mobile')[0] : document.getElementsByClassName('questions-container')[0]
     var questionsHTML = ''
     for (var i = 1; i <= Object.keys(answersAndQuestions[category]).length; i++) {
+        questions = answersAndQuestions[category][i]['question'].replaceAll('<4s>', '&nbsp;&nbsp;&nbsp;&nbsp;')
         if (option) {
-            questionsHTML += `<div id="question ${i}" class="question-in-menu mobile" onclick="getAnswer('${category}', ${i}, 'mobile')">${answersAndQuestions[category][i]['question']}</div>`
+            questionsHTML += `<div id="question ${i}" class="question-in-menu mobile" onclick="getAnswer('${category}', ${i}, 'mobile')">${questions}</div>`
         } else {
-            questionsHTML += `<div id="question ${i}" class="question-in-menu" onclick="getAnswer('${category}', ${i})">${answersAndQuestions[category][i]['question']}</div>`
+            questionsHTML += `<div id="question ${i}" class="question-in-menu" onclick="getAnswer('${category}', ${i})">${questions}</div>`
         }
     }
     questionsContainer.innerHTML = questionsHTML
@@ -125,12 +126,16 @@ function openQuestionsMenu() {
 }
 
 function fillCounters() {
+    var questionsCounter = 0
+
     for (var key in answersAndQuestions) {
       if (answersAndQuestions.hasOwnProperty(key)) {
         if (key != 'main') {
           var count = Object.keys(answersAndQuestions[key]).length;
+          questionsCounter += count
           document.getElementsByClassName(`${key}`)[0].children[0].textContent = count
         }
       }
     }
+    document.getElementById('questions-count').innerHTML = questionsCounter
 }

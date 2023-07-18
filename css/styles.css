@@ -1,3 +1,8 @@
+a {
+    color: red !important;
+    border-bottom: 2px solid red;
+}
+
 .main-container {
     display: flex;
     height: 98vh;
@@ -50,7 +55,7 @@
 .question {
     margin-bottom: 3vh;
     height: 12vh;
-    overflow: hidden;
+    overflow: auto;
     font-size: 1.4vw;
 }
 
@@ -186,6 +191,16 @@ a {
 
 #category-title {
     position: relative;
+}
+
+#questions-count {
+    font-size: 1.5vw;
+    background-color: red;
+    color: white;
+    padding: 6px;
+    position: absolute;
+    left: 60%;
+    top: 20%;
 }
 
 #microphone {

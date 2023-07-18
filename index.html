@@ -12,6 +12,7 @@
         <div class="rubrics-menu">
             <div class="title" id="category-title">
                 Категории
+                <div id="questions-count" title="общее количество вопросов"></div>
                 <img id="microphone" src="./img/microphone.png" alt="microphone" onclick="startRecognition()">
             </div>
             <div class="main-title main" onclick="getLayout('main')">Главная</div>
@@ -75,7 +76,7 @@
             // заполняем первый вопрос и ответ
             getAnswer(category, 1);
         }
-        // заполняем счётчики количества вопросов в каждой категории
+        // заполняем счётчики количества вопросов в каждой категории + общий счётчик
         fillCounters();
 
         // ГОЛОСОВЫЕ КОМАНДЫ
