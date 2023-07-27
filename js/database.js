@@ -89,7 +89,12 @@ answersAndQuestions = {
                         Версия 3.5 (13 сен 2015):<br>
                         - добавлена библиотека typing (аннотация типов)<br>
                         Версия 3.8 (21 окт 2019):<br>
-                        - добавлен моржовый оператор (:=)<br>`},
+                        - добавлен моржовый оператор (:=)<br>
+                        Версия 3.10 (4 окт 2021):<br>
+                        - добавлено перечисление типов через знак | (может использоваться например в аннотации типов
+                        или в проверке isinstance())<br>
+                        - улучшена безопасность (труднее декомпозировать exe-файл в исходный python-код)<br>
+                        - добавлена конструкция match-case`},
         13: {'question': 'Что делает функция enumerate?', 'answer': 'python answer 13'},
         14: {'question': 'Что делает функция zip?', 'answer': 'python answer 14'},
         15: {'question': 'Как в Python отловить ошибку, чтобы она не сломала программу?', 'answer': 'python answer 15'},
@@ -112,6 +117,7 @@ answersAndQuestions = {
                         d, e, f = **my_dict<br>
                         print(d, e, f)<br>
                         В консоль будет выведено 1, 2, 3`},
+        17: {'question': 'Зачем нужна конструкция if __name__ == "__main__"?', 'answer': 'python answer 17'},
     },
     'async': {
         1: {'question': 'Есть ли асинхронность в Django?',
@@ -237,7 +243,7 @@ answersAndQuestions = {
     },
     'algorithms': {
         1: {'question': 'Что такое Big O?', 'answer': 'algorithms answer 1'},
-        2: {'question': 'Какие алгоритмы сортировки существуют?', 'answer': 'algorithms answer 2'},
+        2: {'question': 'algorithms question 2?', 'answer': 'algorithms answer 2'},
         3: {'question': 'Какая сложность у операции вставки в середину списка в Python?',
             'answer': `Вставка элемента в середину списка в Python занимает O(n) времени в худшем случае, где n - это
                        длина списка. Так как после вставки элемента необходимо перепривязать все соседние элементы, что
@@ -245,7 +251,7 @@ answersAndQuestions = {
                        началу списка, сложность может быть O(1) или близкой к этому значению.`},
         4: {'question': 'Какая сложность у операции вставки в конец списка в Python?',
             'answer': 'В Python сложность вставки в конец списка будет O(1), так как мы обращаемся по индексу.'},
-        5: {'question': 'Какие виды сортировок существуют?', 'answer': 'Пузырьком, слиянием, быстрая сортировка/сортировка Хоара'},
+        5: {'question': 'Какие алгоритмы сортировки существуют?', 'answer': 'Пузырьком, слиянием, быстрая сортировка/сортировка Хоара'},
         6: {'question': 'Что такое хэш-таблица?', 'answer': 'algorithms answer 6'},
         7: {'question': 'Как развернуть связный список (linked list)?', 'answer': 'algorithms answer 6'},
         8: {'question': 'Как развернуть словарь в Python?',
@@ -527,6 +533,24 @@ answersAndQuestions = {
                        cur.execute("SELECT * FROM mytable")
                        <br><br>
                        conn.close()`},
+        8: {'question': 'Как параметры есть у полей в ORM Django?',
+            'answer': `- verbose_name
+                       - default
+                       - unique (так же unique_for_date, unique_for_month, unique_for_year)
+                       - null
+                       - blank
+                       - db_index
+                       - primary_key
+                       - editable
+                       - db_column`},
+        9: {'question': 'Чем поле TextField отличается от CharField в ORM Django?',
+            'answer': `django answer 9`},
+        10: {'question': 'Опишите принцип работы связей ForeignKey, OneToOneField и ManyToManyField в ORM Django.',
+            'answer': `django answer 10`},
+        11: {'question': 'Что такое сигналы Django?',
+            'answer': `django answer 11`},
+        12: {'question': 'Опишите структуру Django проекта - файлы, папки',
+            'answer': `django answer 12`},
     },
     'git': {
         1: {'question': 'В чём отличие merge от rebase?',
@@ -635,19 +659,21 @@ answersAndQuestions = {
         4: {'question': 'В чём принципиальное отличие между RabbitMQ и Kafka?', 'answer': 'brokers answer 4'},
     },
     'other': {
-        1: {'question': 'Что такое REST?', 'answer': 'other answer 1'},
-        2: {'question': 'Что такое KISS?', 'answer': 'other answer 2'},
-        3: {'question': 'Что такое DRY?', 'answer': 'other answer 3'},
-        4: {'question': 'Что такое вебсокеты?', 'answer': 'other answer 4'},
-        5: {'question': 'Что такое монолит и микросервисы?', 'answer': 'other answer 5'},
-        6: {'question': 'Как вы изучали программирование?', 'answer': 'other answer 6'},
-        7: {'question': 'Какие существуют инструменты для оптимизации кода в Django проектах?',
+        1: {'question': 'Ссылки на материалы для изучения',
+            'answer': `1) <a href="https://yourwaytoit.ru/termins/Backend/Общее/first/" target="_blank">Термины Backend</a>`},
+        2: {'question': 'Что такое REST?', 'answer': 'other answer 1'},
+        3: {'question': 'Что такое KISS?', 'answer': 'other answer 2'},
+        4: {'question': 'Что такое DRY?', 'answer': 'other answer 3'},
+        5: {'question': 'Что такое вебсокеты?', 'answer': 'other answer 4'},
+        6: {'question': 'Что такое монолит и микросервисы?', 'answer': 'other answer 5'},
+        7: {'question': 'Как вы изучали программирование?', 'answer': 'other answer 6'},
+        8: {'question': 'Какие существуют инструменты для оптимизации кода в Django проектах?',
             'answer': `cProfile - это модуль Python, который позволяет профилировать код на уровне функций и строк кода.<br><br>
                        line_profiler - это модуль для профилирования производительности на уровне строк кода.<br><br>
                        Django Debug Toolbar - это инструмент для отслеживания производительности Django-приложений.<br><br>
                        ISort - это утилита / библиотека на Python для сортировки импортируемых модулей в алфавитном
                        порядке, автоматического разделения их на секции, а также группировки по типу.`},
-        8: {'question': 'Какие паттерны программирования вы знаете?',
+        9: {'question': 'Какие паттерны программирования вы знаете?',
             'answer': `1) Декоратор - паттерн присущий языку Python<br>
                        2) Singleton - в некоторых языках есть из коробки, но в Python его можно реализовать самостоятельно:<br>
                        class Singleton:<br>
