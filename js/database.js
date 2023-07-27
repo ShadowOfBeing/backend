@@ -534,14 +534,14 @@ answersAndQuestions = {
                        <br><br>
                        conn.close()`},
         8: {'question': 'Как параметры есть у полей в ORM Django?',
-            'answer': `- verbose_name
-                       - default
-                       - unique (так же unique_for_date, unique_for_month, unique_for_year)
-                       - null
-                       - blank
-                       - db_index
-                       - primary_key
-                       - editable
+            'answer': `- verbose_name<br>
+                       - default<br>
+                       - unique (так же unique_for_date, unique_for_month, unique_for_year)<br>
+                       - null<br>
+                       - blank<br>
+                       - db_index<br>
+                       - primary_key<br>
+                       - editable<br>
                        - db_column`},
         9: {'question': 'Чем поле TextField отличается от CharField в ORM Django?',
             'answer': `django answer 9`},
