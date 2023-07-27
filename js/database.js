@@ -240,6 +240,8 @@ answersAndQuestions = {
                         после начала чтения, что может привести к фантомным чтениям<br>
                         - Serializable (SE) - транзакции выполняются последовательно, что гарантирует изоляцию транзакций
                         и отсутствие фантомных чтений<br>`},
+        12: {'question': 'Как в SQL-запросах использовать CTE, группировки, агрегации?',
+             'answer': 'database answer 12'},
     },
     'algorithms': {
         1: {'question': 'Что такое Big O?', 'answer': 'algorithms answer 1'},
@@ -549,8 +551,10 @@ answersAndQuestions = {
             'answer': `django answer 10`},
         11: {'question': 'Что такое сигналы Django?',
             'answer': `django answer 11`},
-        12: {'question': 'Опишите структуру Django проекта - файлы, папки',
+        12: {'question': 'Опишите структуру Django проекта - файлы, папки.',
             'answer': `django answer 12`},
+        13: {'question': 'В чём заключается проблема в ORM системах, которая называется N + 1?',
+            'answer': `django answer 13`},
     },
     'git': {
         1: {'question': 'В чём отличие merge от rebase?',
