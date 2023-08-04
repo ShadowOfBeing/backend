@@ -762,6 +762,8 @@ answersAndQuestions = {
                        - git rebase<br>
                        - git merge<br>
                        - git amend<br>`},
+        3: {'question': 'Что такое gitignore и зачем он нужен?',
+            'answer': `git answer 3`},
     },
     'docker': {
         1: {'question': `Что такое Docker и Docker Compose? Зачем они нужны?`,
